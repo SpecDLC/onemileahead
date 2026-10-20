@@ -1,0 +1,62 @@
+# Public repo: defense in depth for this workflow pull request.
+# The release export replaces this file with the app verify (gitleaks, npm test, cargo test)
+# when the site source is published. Until then this check keeps the workflow contract green.
+name: Verify
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: gitleaks (pinned + checksum)
+        env:
+          V: 8.30.1
+          SHA: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+        run: |
+          set -euo pipefail
+          f="gitleaks_${V}_linux_x64.tar.gz"
+          curl -sSfL -o "/tmp/$f" "https://github.com/gitleaks/gitleaks/releases/download/v${V}/$f"
+          echo "${SHA}  /tmp/$f" | sha256sum -c -
+          tar -xzf "/tmp/$f" -C /tmp gitleaks
+          /tmp/gitleaks git . --no-banner --redact --exit-code 1
+      - name: Deploy workflow matches the Fondue gate
+        run: |
+          set -euo pipefail
+          f=.github/workflows/deploy.yml
+          w=wrangler.jsonc
+          test -f "$f"
+          test -f "$w"
+          grep -q 'WRANGLER: wrangler@4.151.2' "$f"
+          grep -q 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' "$f"
+          grep -q 'actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020' "$f"
+          # preview and cleanup set the preview environment; production sets production.
+          awk '
+            $0 ~ /^  preview:/ { job="preview" }
+            $0 ~ /^  cleanup:/ { job="cleanup" }
+            $0 ~ /^  production:/ { job="production" }
+            $0 ~ /^    environment: preview$/ { if (job=="preview" || job=="cleanup") seen[job]=1 }
+            $0 ~ /^    environment: production/ { if (job=="production") seen[job]=1 }
+            END {
+              if (!seen["preview"] || !seen["cleanup"] || !seen["production"]) exit 1
+            }
+          ' "$f"
+          python3 - "$w" <<'PY'
+          import re, sys
+          text = open(sys.argv[1], encoding="utf-8").read()
+          patterns = re.findall(r'"pattern"\s*:\s*"([^"]+)"', text)
+          if patterns != ["onemileahead.specdlc.com"]:
+              raise SystemExit(f"expected one route, got {patterns}")
+          if '"custom_domain": true' not in text:
+              raise SystemExit("route must set custom_domain true")
+          if "fondue.specdlc.com" in text:
+              raise SystemExit("second hostname")
+          PY

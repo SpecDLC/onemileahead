@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "one-mile-ahead",
+  "compatibility_date": "2026-10-02",
+  // Static assets only for now; the read-only marker API (issue #2) adds a Worker script.
+  "assets": {
+    "directory": "./dist"
+  },
+  // The app assumes it is served from the root of its own hostname (OMA-TECH-EDGE-3).
+  // Wrangler creates the DNS record and certificate for a Custom Domain on deploy.
+  "routes": [
+    { "pattern": "onemileahead.specdlc.com", "custom_domain": true }
+  ],
+  // One origin only: an installed PWA and its offline data belong to the origin it came from.
+  "workers_dev": false,
+  "preview_urls": false,
+  // Worker Previews need a previews block; it can be empty. `wrangler preview` uses it.
+  "previews": {}
+}
