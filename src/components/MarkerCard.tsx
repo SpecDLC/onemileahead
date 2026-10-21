@@ -9,8 +9,20 @@ interface MarkerCardProps {
 }
 
 export default function MarkerCard({ marker, onClick, distance, bearing: dir }: MarkerCardProps) {
+  const open = () => onClick(marker);
+
   return (
-    <article className="marker-card" onClick={() => onClick(marker)}>
+    <article
+      className="marker-card"
+      role="button"
+      tabIndex={0}
+      onClick={open}
+      onKeyDown={(event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        open();
+      }}
+    >
       <div className="marker-card-header">
         <span className="marker-number">#{marker.markerNumber}</span>
         {marker.isRTHL && <span className="marker-badge rthl">RTHL</span>}

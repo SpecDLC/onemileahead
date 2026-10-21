@@ -15,9 +15,20 @@ interface FeaturedMarkerCardProps {
 
 export default function FeaturedMarkerCard({ marker, research, onClick }: FeaturedMarkerCardProps) {
   const topLinks = research.links.slice(0, 3);
+  const open = () => onClick(marker);
 
   return (
-    <article className="featured-card" onClick={() => onClick(marker)}>
+    <article
+      className="featured-card"
+      role="button"
+      tabIndex={0}
+      onClick={open}
+      onKeyDown={(event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        open();
+      }}
+    >
       <div className="featured-card-header">
         <span className="marker-number">#{marker.markerNumber}</span>
         <span className="featured-badge">Featured</span>
