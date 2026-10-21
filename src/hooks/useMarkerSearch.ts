@@ -7,8 +7,19 @@ import { db } from '../db/database';
 const DEBOUNCE_MS = 150;
 const NO_RESULTS: Marker[] = [];
 
-function isNumericQuery(query: string): boolean {
-  return /^\d+$/.test(query.trim());
+/**
+ * Marker-number lookup for a pure number, `#95`, or `marker 95` (optional hash, any case).
+ * Anything else, including a number buried in a keyword query, stays a text search.
+ * Returns the digits to look up, or null.
+ */
+export function markerNumberLookup(query: string): string | null {
+  const trimmed = query.trim();
+  if (/^\d+$/.test(trimmed)) return trimmed;
+  const hashed = /^#\s*(\d+)$/.exec(trimmed);
+  if (hashed) return hashed[1];
+  const labeled = /^marker\s+#?\s*(\d+)$/i.exec(trimmed);
+  if (labeled) return labeled[1];
+  return null;
 }
 
 interface Completed {
@@ -17,8 +28,9 @@ interface Completed {
 }
 
 /**
- * Results for the current query. While a new search runs, the previous results stay on screen and
- * `isLoading` is true; an empty query clears them.
+ * Results for the current query. A pure number, `#95`, or `marker 95` uses the marker-number
+ * index. Every other query uses keyword search. While a new search runs, the previous results stay
+ * on screen and `isLoading` is true; an empty query clears them.
  *
  * State only changes when a search completes. Loading is derived (the last completed query isn't
  * the current one), so the effect never sets state synchronously.
@@ -44,8 +56,9 @@ export function useMarkerSearch(query: string) {
     const timer = setTimeout(async () => {
       let hits = NO_RESULTS;
       try {
-        if (isNumericQuery(trimmed)) {
-          hits = await searchByMarkerNumber(trimmed);
+        const number = markerNumberLookup(trimmed);
+        if (number !== null) {
+          hits = await searchByMarkerNumber(number);
         } else {
           if (!engineRef.current) {
             const allMarkers = await db.markers.toArray();
