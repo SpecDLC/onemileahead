@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import type { Marker } from '../../types/marker';
 
 // Store references accessible from both mock factories and tests
@@ -146,5 +147,28 @@ describe('MapPage [REQ:map]', () => {
     expect(onSelectMarker).toHaveBeenCalledWith(
       expect.objectContaining({ markerNumber: '100' }),
     );
+  });
+
+  it('reaches the popup body with Tab and opens the marker with Enter [AC:OMA-UX-A11Y-1]', async () => {
+    const user = userEvent.setup();
+    const onSelectMarker = vi.fn();
+    const MapPage = (await import('../MapPage')).default;
+    render(<MapPage onSelectMarker={onSelectMarker} />);
+    const popup = await firstPopup();
+    document.body.append(popup);
+
+    try {
+      await user.tab();
+      const body = popup.querySelector('[role="button"]') as HTMLElement;
+      expect(body).toHaveFocus();
+      await user.keyboard('{Enter}');
+      expect(onSelectMarker).toHaveBeenCalledWith(
+        expect.objectContaining({ markerNumber: '100' }),
+      );
+      expect(body.querySelector('img')).toBeNull();
+      expect(body.textContent).toContain('Marker A');
+    } finally {
+      popup.remove();
+    }
   });
 });

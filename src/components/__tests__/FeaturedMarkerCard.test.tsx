@@ -92,7 +92,18 @@ describe('FeaturedMarkerCard', () => {
     const onClick = vi.fn();
     render(<FeaturedMarkerCard marker={marker} research={research} onClick={onClick} />);
 
-    await user.click(screen.getByRole('article'));
+    await user.click(screen.getByRole('button', { name: /Alamo Cenotaph/ }));
+    expect(onClick).toHaveBeenCalledWith(marker);
+  });
+
+  it('reaches the card with Tab and opens the marker with Enter [AC:OMA-UX-A11Y-1]', async () => {
+    const user = userEvent.setup();
+    const onClick = vi.fn();
+    render(<FeaturedMarkerCard marker={marker} research={research} onClick={onClick} />);
+
+    await user.tab();
+    expect(screen.getByRole('button', { name: /Alamo Cenotaph/ })).toHaveFocus();
+    await user.keyboard('{Enter}');
     expect(onClick).toHaveBeenCalledWith(marker);
   });
 });

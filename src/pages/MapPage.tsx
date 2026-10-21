@@ -27,15 +27,23 @@ const DEFAULT_ZOOM = 6;
 
 /**
  * Popup body for a pin. Built from DOM nodes so marker text is never parsed as HTML.
- * Tapping it opens the marker.
+ * Click, Enter, or Space opens the marker.
  */
 function popupContent(m: MarkerType, onSelectMarker: (m: MarkerType) => void): HTMLElement {
   const el = document.createElement('div');
-  el.style.cursor = 'pointer';
+  el.className = 'marker-popup-body';
+  el.tabIndex = 0;
+  el.setAttribute('role', 'button');
   const title = document.createElement('strong');
   title.textContent = m.title;
   el.append(title, document.createElement('br'), `#${m.markerNumber}`);
-  el.addEventListener('click', () => onSelectMarker(m));
+  const open = () => onSelectMarker(m);
+  el.addEventListener('click', open);
+  el.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    open();
+  });
   return el;
 }
 

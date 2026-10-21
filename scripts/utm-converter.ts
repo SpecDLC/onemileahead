@@ -1,6 +1,6 @@
 /**
  * UTM to WGS84 (lat/lng) coordinate conversion.
- * Supports UTM zones 13 and 14 which cover Texas.
+ * Accepts any zone number; Texas spans zones 13–15.
  *
  * Based on Karney's algorithm for UTM projection.
  */

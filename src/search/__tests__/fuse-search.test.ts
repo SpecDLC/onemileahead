@@ -131,3 +131,116 @@ describe('SearchEngine finds inscription text anywhere [OMA-FUNC-SEARCH-1]', () 
     expect(engine.search('Quillfeather')[0].id).toBe(2);
   });
 });
+
+describe('title matches rank above city-only matches [OMA-FUNC-SEARCH-3]', () => {
+  // The five Alamo (Hidalgo) markers name the city, not the battle. #95 is the Cenotaph.
+  const cityOnly: Marker[] = [
+    ['660', 'Camp Ebenezer'],
+    ['4455', 'Saint Joseph Catholic Church'],
+    ['4570', 'Santa Ana Land Grant'],
+    ['5474', 'Thomas Walter Jones'],
+    ['12628', '1940 Train-Truck Collision'],
+  ].map(([markerNumber, title], i) =>
+    makeMarker({
+      id: i + 1,
+      markerNumber,
+      title,
+      county: 'Hidalgo',
+      city: 'Alamo',
+      markerText: 'A historical marker in the city of Alamo.',
+    }),
+  );
+
+  const cenotaph = makeMarker({
+    id: 95,
+    markerNumber: '95',
+    title: 'Alamo Cenotaph',
+    county: 'Bexar',
+    city: 'San Antonio',
+    markerText: 'The cenotaph on Alamo Plaza honors the defenders of the Alamo.',
+  });
+
+  it('ranks marker 95 above city-only Alamo hits for "alamo"', () => {
+    const engine = new SearchEngine([...cityOnly, cenotaph]);
+    const results = engine.search('alamo');
+    const rank = (n: string) => results.findIndex((m) => m.markerNumber === n);
+    expect(rank('95')).toBeGreaterThanOrEqual(0);
+    for (const marker of cityOnly) {
+      const cityRank = rank(marker.markerNumber);
+      expect(cityRank, marker.title).toBeGreaterThan(rank('95'));
+    }
+  });
+});
+
+/** Standard Levenshtein. A transposition of two adjacent letters costs 2. */
+function levenshtein(a: string, b: string): number {
+  const dp = Array.from({ length: a.length + 1 }, () => new Array<number>(b.length + 1).fill(0));
+  for (let i = 0; i <= a.length; i++) dp[i][0] = i;
+  for (let j = 0; j <= b.length; j++) dp[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      dp[i][j] = Math.min(
+        dp[i - 1][j] + 1,
+        dp[i][j - 1] + 1,
+        dp[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1),
+      );
+    }
+  }
+  return dp[a.length][b.length];
+}
+
+function markerWords(marker: Marker): string[] {
+  return `${marker.title} ${marker.county} ${marker.city} ${marker.markerText}`
+    .toLowerCase()
+    .match(/[a-z0-9]+/g) ?? [];
+}
+
+describe('fuzzy hits stay within one edit [OMA-FUNC-SEARCH-4]', () => {
+  const markers: Marker[] = [
+    makeMarker({
+      id: 1,
+      markerNumber: '1',
+      title: 'Malakoff',
+      county: 'Henderson',
+      city: 'Malakoff',
+      markerText: 'A town named Malakoff.',
+    }),
+    makeMarker({
+      id: 2,
+      markerNumber: '2',
+      title: 'Salado',
+      county: 'Bell',
+      city: 'Salado',
+      markerText: 'The town of Salado.',
+    }),
+    makeMarker({
+      id: 3,
+      markerNumber: '3',
+      title: 'Palacios Cemetery',
+      county: 'Matagorda',
+      city: 'Palacios',
+      markerText: 'Palacios Cemetery.',
+    }),
+    makeMarker({
+      id: 95,
+      markerNumber: '95',
+      title: 'Alamo Cenotaph',
+      county: 'Bexar',
+      city: 'San Antonio',
+      markerText: 'The Alamo Cenotaph.',
+    }),
+  ];
+
+  it('returns no marker that lacks a word within one edit of "alamoo"', () => {
+    const results = new SearchEngine(markers).search('alamoo');
+    for (const marker of results) {
+      const close = markerWords(marker).some((word) => levenshtein(word, 'alamoo') <= 1);
+      expect(close, marker.title).toBe(true);
+    }
+    const titles = results.map((m) => m.title);
+    expect(titles).not.toContain('Malakoff');
+    expect(titles).not.toContain('Salado');
+    expect(titles).not.toContain('Palacios Cemetery');
+    expect(results.some((m) => m.markerNumber === '95')).toBe(true);
+  });
+});
