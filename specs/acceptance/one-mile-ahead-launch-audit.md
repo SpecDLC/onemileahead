@@ -2,11 +2,11 @@
 title: One Mile Ahead — launch audit and proposed acceptance criteria
 status: draft
 created: 2026-10-21
-revised: 2026-10-21 (owner answers Q1–Q7; two-tier Done when)
+revised: 2026-10-21 (card answers Q1, Q3–Q6; Q7 open)
 audited-commit: f02f48c (Release rel-20261021-c3bfbc20)
 audited-host: https://onemileahead.specdlc.com
 refines: specs/acceptance/one-mile-ahead-baseline.md
-tldr: "First readings against the deployed hostname, plus the owner's answers to Q1–Q7. EDGE-5, LEARN-* and FEAT-1 are retired until research files ship. EDGE-4 is tightened and EDGE-6 amended for Cloudflare Web Analytics in the baseline. 29 new ACs: 24 refuted (live or in code), 1 passed, 4 with no check yet. Done when is split into launch blockers and post-launch work."
+tldr: "First readings against the deployed hostname, plus the board's card answers. Ahead ships and leaves ?engine=wasm; the README keeps describing it. The search box keeps a numeric default and adds a toggle. Research files ship; LEARN-*, FEAT-1 and EDGE-5 stay, and Learn More is not hidden. Public OpenStreetMap stays until SPE-188, with no host change and no pin-icon move. Cloudflare Web Analytics stays and the beacon is allowed; no disclosure line. Nearby (Q7) is open. EDGE-4 is tightened and EDGE-6 is amended for the beacon host in the baseline. 29 new ACs: 24 refuted (live or in code), 1 passed, 4 with no check yet. Those readings are the 2026-10-21 evidence and are not re-taken here. Done when is split into launch blockers and post-launch work."
 ---
 
 # One Mile Ahead — launch audit and proposed ACs
@@ -34,19 +34,21 @@ Every reading below comes from a reviewer who did not write the code. Under the 
 
 Each item is done when its AC has a `passed` reading against the deployed hostname, or, for retirements, when the baseline records the retirement with its reason.
 
-1. **Learn More hidden; a useful home screen (Q4).**
-   - `EDGE-5`, `LEARN-1`–`LEARN-4` and `FEAT-1` are retired in the baseline. The reason: no research files ship yet, so the feature is hidden until they do.
-   - `OMA-UX-HIDE-1`: no Learn More or featured UI, and no requests under `/data/research/`.
-   - `OMA-UX-HOME-1`: an intro with example queries replaces the featured markers.
-2. `OMA-UX-INPUT-1`: the text keyboard by default, with digits-only queries still doing a number lookup (Q3).
+1. **Research files ship; Learn More stays (Q4).**
+   - `EDGE-5`, `LEARN-1`–`LEARN-4` and `FEAT-1` stay in force. They are not retired. Learn More is not hidden.
+   - The home screen stays the featured-markers route (`FEAT-1`). It is blank in production until the research files are in the repo and deployed. Product work is SPE-185.
+   - `OMA-UX-HIDE-1` and the intro replacement in `OMA-UX-HOME-1` are not the owner decision.
+2. `OMA-UX-INPUT-1`: the numeric keyboard stays the default (SPE-194), and a toggle switches it to a text keyboard. A digits-only query still does a number lookup (Q3). Product work is SPE-337.
 3. `OMA-FUNC-LOOKUP-5`: "#95" and "marker 95" find #95.
 4. `OMA-FUNC-SEARCH-3`: title matches rank above city- and county-only matches.
 5. `OMA-TECH-CI-1`: deploy waits for Verify.
 6. `OMA-TECH-BUILD-1`: `npm test` passes on a clean checkout in every environment we use. It passes in CI, but the differential test timed out in a slower sandbox (section 2). The owner listed it as a blocker on the earlier `refuted` reading; it may come off this list once the test has margin.
-7. `OMA-TECH-EDGE-7` and `OMA-UX-PRIV-1`: the Web Analytics beacon loads with no CSP violation, and a disclosure line says so (Q6). `PRIV-1` was not in the owner's blocker list; it is placed here because Q6 ties the disclosure to allowing the beacon. Move it to post-launch if the owner prefers.
+7. `OMA-TECH-EDGE-7`: the Web Analytics beacon loads with no CSP violation (Q6). Allow the beacon. No disclosure line. `OMA-UX-PRIV-1` is not an owner decision. The beacon allowance itself is SPE-338. This issue does not change CSP.
 8. `OMA-UX-A11Y-1`: every control that opens a marker works from the keyboard.
 9. `OMA-SEC-EDGE-8`: HSTS, Referrer-Policy and Permissions-Policy.
 10. `OMA-DATA-PIPE-3`: a rebuild from the repo can't bring back #10485's bad coordinates.
+
+Ahead ships (Q1). The Ahead tab leaves `?engine=wasm`. The README keeps describing Ahead. Product work is SPE-336. `AHEAD-2` does not gate the tab.
 
 ### Post-launch
 
@@ -56,13 +58,11 @@ Everything else, each to a `passed` reading or a written retirement:
 - `NAV-1`
 - `NAV-2` (deep links, decided yes)
 - `A11Y-2`
-- `NEAR-5`, `NEAR-6`, `NEAR-7`
-- `MAP-3`, `MAP-4`, `MAP-5`
-- `AHEAD-2`, `AHEAD-3`, `AHEAD-4`, `AHEAD-5`
+- `NEAR-5`, `NEAR-6`. `NEAR-7` is unmarked (Q7 is open)
+- `MAP-3`. `MAP-4` and `MAP-5` do not move pin icons or change the tile host in this pass (Q5)
+- `AHEAD-2`, `AHEAD-3`, `AHEAD-4`, `AHEAD-5` (quality work; none of these gates the Ahead tab)
 - `DATA-VER-1`, `UX-DATA-2`
 - `ABOUT-1`
-
-Ahead becomes a default tab once `AHEAD-2` passes (Q1). Until then, the README doesn't advertise it.
 
 ## 1. Section 10 (Cloudflare), first readings against the deployed hostname
 
@@ -72,7 +72,7 @@ Ahead becomes a default tab once `AHEAD-2` passes (Q1). Until then, the README d
 | `OMA-TECH-EDGE-2` | `passed`. The build has 14 files. The largest is `data/markers.json` at 17,764,384 B, which is under 25 MiB. |
 | `OMA-TECH-EDGE-3` | `passed`. `/`, `/sw.js`, `/manifest.webmanifest` and `/data/markers.json` return 200 from the root of the custom domain. |
 | `OMA-TECH-EDGE-4` | `passed` under the tightened falsifier. The falsifier now names any of `zstd`, `br` or `gzip` (baseline, 2026-10-21). The browser offered all three and got `content-encoding: zstd`: 5,410,488 B on the wire for 17,764,384 B decoded. |
-| `OMA-TECH-EDGE-5` | `refuted` live: `/data/research/manifest.json` and `/data/research/95.md` both return 404. Then **retired** by the owner (Q4), because research is hidden until files ship. The dataset half stays covered by `EDGE-3` and the clean-checkout deploy. |
+| `OMA-TECH-EDGE-5` | `refuted` live: `/data/research/manifest.json` and `/data/research/95.md` both return 404. Not retired (Q4). Research files ship (SPE-185). Learn More is not hidden. |
 | `OMA-SEC-EDGE-6` | `passed` under both the original and the amended claim. The live `script-src` is `'self' 'wasm-unsafe-eval'`, and the engine compiles. The amended claim (Q6) also allows `https://static.cloudflareinsights.com`. `e2e/csp-headers.test.ts` must expect that host once `EDGE-7` is fixed. |
 
 ## 2. Baseline ACs re-read at f02f48c and live
@@ -87,9 +87,9 @@ Ahead becomes a default tab once `AHEAD-2` passes (Q1). Until then, the README d
 | `OMA-FUNC-NEAR-3` | `passed` (live), but see `UX-NEAR-5` | On denial it shows the raw browser string "User denied Geolocation". |
 | `OMA-FUNC-MAP-1` | `passed` (live, partial) | Clusters render over Texas and OSM tiles load. Popup-to-detail was not exercised live. |
 | `OMA-FUNC-DETAIL-1`, `-2` | `passed` (live, #95) | Directions go to 29.426111, −98.486733. |
-| `OMA-FUNC-LEARN-1`–`4`, `OMA-FUNC-FEAT-1` | `refuted` in production, then **retired** (Q4) | No research is deployed. The retirement is recorded in each baseline row. Re-adopt them unchanged with the release that ships research. |
+| `OMA-FUNC-LEARN-1`–`4`, `OMA-FUNC-FEAT-1` | `refuted` in production | No research is deployed. Not retired (Q4). Learn More stays; the research files ship (SPE-185). |
 | `OMA-DATA-PIPE-2` | `passed` on the committed data, with a gap | The file has 17,371 records: 0 outside the AC's bounds, 1,468 at 0,0, and #10485 now at 0,0. **But** the repo can't reproduce it. `coordinate-corrections.ts` has no entry for #10485, and `texas-bounds.ts` is still the looser box. A rebuild could bring back the Chihuahua point. See `DATA-PIPE-3`. |
-| Open intent I1–I6 | answered 2026-10-21 | The answers are recorded in the baseline's section 9 and below. I4's description was stale: the box had moved to `inputMode="numeric"`, and Q3 reverses that. |
+| Open intent I1–I6 | I1–I3 answered; I4, I5 and I6 follow the cards | Not all six were answered. I4 is a numeric default plus a toggle. I5 is open. I6 keeps public OpenStreetMap until SPE-188. The box is `inputMode="numeric"`, which matches that default. |
 
 ## 3. Proposed acceptance criteria
 
@@ -103,14 +103,14 @@ The "Reading" column is the live or code reading at 2026-10-21. **Tier** is `lau
 | `OMA-FUNC-SEARCH-3` | launch | obligation | A marker whose title contains every query word ranks above markers that match only on city or county. Extends `SEARCH-2` | For some query, a city- or county-only match ranks above a title match | **`refuted`**. "alamo" puts five markers in Alamo (Hidalgo County) ahead of #95 Alamo Cenotaph, which comes 6th |
 | `OMA-FUNC-SEARCH-4` | post | prohibition | A keyword query never returns a marker that has no word within edit distance 1 of some query word, in any searched field. Pairs with `SEARCH-1` | Some result shares no such word with the query | **`refuted`**. "alamoo" gave #12663 Malakoff, #15828 Salado and #3912 Palacios Cemetery, and no Alamo |
 | `OMA-UX-PERF-1` | post | obligation | On a real mid-range phone, named in the reading, results for a typed query appear within 300 ms at p95, and typing never drops characters | p95 above 300 ms over a fixed set of 20 queries on that phone | `no check`. Stays `no check` until measured on a real phone. *Context only, not a reading:* desktop Chromium took 200–850 ms per query on the main thread |
-| `OMA-UX-INPUT-1` | launch | obligation | The search box opens the text keyboard. A query of digits only still runs the number lookup (`LOOKUP-1`–`3`). No keyboard toggle (Q3) | `inputmode` is `numeric`, `decimal` or `tel`; or a digits-only query does not return the number-lookup results | **`refuted`**. `inputmode="numeric"` (`SearchInput.tsx:14`), and `SearchInput.test.tsx:26-28` asserts `numeric`, so the test changes with the fix |
+| `OMA-UX-INPUT-1` | launch | obligation | The search box opens the numeric keyboard by default (SPE-194). A toggle switches it to a text keyboard and back. A query of digits only still runs the number lookup (`LOOKUP-1`–`3`) (Q3). Product work is SPE-337 | The default `inputmode` is not `numeric`; or there is no toggle between numeric and text; or a digits-only query does not return the number-lookup results | Pre-card reading, kept: **`refuted`**. `inputmode="numeric"` (`SearchInput.tsx:14`), and `SearchInput.test.tsx:26-28` asserts `numeric`, so the test changes with the fix |
 
 ### 3.2 Home, navigation, state
 
 | Alias | Tier | Polarity | Claim | Falsified if | Reading |
 |---|---|---|---|---|---|
-| `OMA-UX-HOME-1` | launch | prohibition | With an empty query, Search is never blank. It shows a short intro to the app and example queries: at least one marker number and one keyword. Replaces the featured-markers route (Q4) | A first-time visitor sees only the search box and the tab bar, or no example query | **`refuted`** (live screenshot) |
-| `OMA-UX-HIDE-1` | launch | prohibition | Until research files ship, the app shows no Learn More section and no featured-marker UI, and requests nothing under `/data/research/`. Pairs with `HOME-1`; replaces the retired `LEARN-*` / `FEAT-1` (Q4) | Any Learn More or featured UI renders, or any request goes to `/data/research/` | **`refuted`**. Live: every launch requests `/data/research/manifest.json`, opening #95 requests `/data/research/95.md`, and both return 404 |
+| `OMA-UX-HOME-1` | — | — | Not adopted (Q4). Featured markers stay (`FEAT-1`). An intro with example queries does not replace them. The home screen is blank until the research files ship (SPE-185) | Featured markers are replaced by an intro, or Learn More is hidden because the research files are not deployed yet | Pre-card reading, kept: **`refuted`** (live screenshot) |
+| `OMA-UX-HIDE-1` | — | — | Not an owner decision (Q4). Learn More is not hidden. `LEARN-*`, `FEAT-1` and `EDGE-5` are not retired. Research files ship (SPE-185) | This row is used to hide Learn More or to retire those ACs | Pre-card reading, kept: **`refuted`**. Live: every launch requests `/data/research/manifest.json`, opening #95 requests `/data/research/95.md`, and both return 404 |
 | `OMA-FUNC-NAV-1` | post | obligation | Back from a marker detail returns to the same query, the same results and the same scroll position. Answers I2 | After Back, the query box or the results differ from before | **`refuted`**. After Back the query is "" and there are 0 results |
 | `OMA-FUNC-NAV-2` | post | possibility | `/marker/{N}` opens marker N's detail on a cold load, and browser Back from a detail stays in the app. Decided yes (Q2); binds `not_found_handling: "single-page-application"` | `/marker/95` returns 404 or a blank app, or Back leaves the site | **`refuted`**. `/marker/95` → 404, and `history.length` stays 1 after opening a detail |
 | `OMA-UX-A11Y-2` | post | obligation | The settings drawer moves focus inside when it opens, closes on Escape, and returns focus to the gear | Escape leaves the drawer open, or focus stays behind it | **`refuted`**. Escape didn't close it, and focus stayed on the page |
@@ -121,21 +121,21 @@ The "Reading" column is the live or code reading at 2026-10-21. **Tier** is `lau
 |---|---|---|---|---|---|
 | `OMA-UX-NEAR-5` | post | obligation | When location is denied or unavailable, Nearby and Ahead explain it in plain words and offer a next step (how to enable it, or open the Map). Refines `NEAR-3` | The browser's raw error text is shown, or there is no action | **`refuted`**. "Location unavailable: User denied Geolocation", with nothing else |
 | `OMA-UX-NEAR-6` | post | obligation | With a location but no marker within the search limit, Nearby says so | An empty list renders with no message | `no check`. The code has no empty-state message |
-| `OMA-UX-NEAR-7` | post | prohibition | Nearby re-queries and re-sorts markers only on the first fix, or after the device has moved about 50 m from the last query point (Q7). Pairs with `NEAR-1` | A fix less than 50 m from the last query point triggers a re-read or re-sort of the markers | **`refuted`** (code). `useNearbyMarkers.ts:73` runs `db.markers.toArray()` and a full sort on every change of lat or lng. WASM-by-default is deferred (Q7) |
+| `OMA-UX-NEAR-7` | — | — | Unmarked. The owner has not decided how Nearby should limit its work (Q7). A 50 m re-query is not an answer. The board asked for a brief | This row is read as an owner decision, including a 50 m re-query | Pre-card reading, kept: **`refuted`** (code). `useNearbyMarkers.ts:73` runs `db.markers.toArray()` and a full sort on every change of lat or lng |
 | `OMA-FUNC-MAP-3` | post | possibility | The Map can center on the user's location in one tap | There is no such control | **`refuted`**. There is no locate control |
-| `OMA-UX-MAP-4` | post | obligation | Pin icons are served from the app's own origin and are precached, so once seeded, pins render offline (Q5) | Any pin icon is requested from another origin, or offline pins are missing or appear as broken images | **`refuted`** (code). Icons come from `unpkg.com` (`MapPage.tsx:15-17`), and the service worker has no route for them |
-| `OMA-TECH-MAP-5` | post | obligation | Map tiles come from the public OSM service on its single host, `https://tile.openstreetmap.org`, with OSM attribution shown (Q5) | A tile is requested from `{a,b,c}.tile.openstreetmap.org` or any other host, or the attribution is missing | **`refuted`** (live). Tiles load from `https://c.tile.openstreetmap.org/...`; the attribution is present |
+| `OMA-UX-MAP-4` | — | — | No pin-icon move in this pass (Q5). Pin icons stay on `unpkg.com` until SPE-188. This row does not require serving them from the app origin | This pass moves pin icons off `unpkg.com`, or treats an `unpkg.com` icon request as a failure of the kept call | Pre-card reading, kept: **`refuted`** (code). Icons come from `unpkg.com` (`MapPage.tsx:15-17`), and the service worker has no route for them |
+| `OMA-TECH-MAP-5` | — | — | Public OpenStreetMap stays until SPE-188 (Q5, the 2026-10-14 call). No host change in this pass. Tiles may keep using `{a,b,c}.tile.openstreetmap.org`. This row does not require the single `tile.openstreetmap.org` host | This pass switches the tile host, or drops public OpenStreetMap | Pre-card reading, kept: **`refuted`** (live). Tiles load from `https://c.tile.openstreetmap.org/...`; the attribution is present |
 
 ### 3.4 Ahead (the app's name)
 
 Ahead works today only behind `?engine=wasm`.
-- **Q1:** it becomes a default tab once `AHEAD-2` passes. The README stops advertising it until then (done in the spec-drift PR).
+- **Q1:** Ship Ahead. The Ahead tab leaves `?engine=wasm`. The README keeps describing Ahead. Product work is SPE-336. This does not wait on `AHEAD-2`, and the README does not stop advertising Ahead.
 - `AHEAD-1` already passes behind the flag.
 
 | Alias | Tier | Polarity | Claim | Falsified if | Reading |
 |---|---|---|---|---|---|
 | `OMA-FUNC-AHEAD-1` | — | obligation | Driving in a straight line at highway speed, a marker inside the corridor cues once, between 0.9 and 1.0 mi before it | A marker in the corridor never cues, or cues twice on one pass | `passed` (live, flagged). On a simulated I-35W drive at 29 m/s, #1470 cued at 0.9 mi and only once |
-| `OMA-UX-AHEAD-2` | post | prohibition | The cue area never holds more than the 2 most recent cues, and a cue is removed once its marker is behind the vehicle. Pairs with `AHEAD-1`. **Gates Ahead becoming a default tab (Q1)** | More than 2 cues are visible, or a cue stays after its marker is passed | **`refuted`**. After 2 simulated minutes, 6 stacked cues pushed the list off screen |
+| `OMA-UX-AHEAD-2` | post | prohibition | The cue area never holds more than the 2 most recent cues, and a cue is removed once its marker is behind the vehicle. Pairs with `AHEAD-1`. Does not gate the Ahead tab (Q1) | More than 2 cues are visible, or a cue stays after its marker is passed | **`refuted`**. After 2 simulated minutes, 6 stacked cues pushed the list off screen |
 | `OMA-UX-AHEAD-3` | post | possibility | The user can turn on spoken cues, using the browser's speech synthesis | No audible cue can be enabled | **`refuted`**. Cues are text only; `speechSynthesis` is available but unused |
 | `OMA-UX-AHEAD-4` | post | possibility | While Ahead is open and moving, the screen stays awake (Wake Lock API, where supported) | The screen sleeps during a drive with Ahead open on a supporting browser | `no check`. There is no wake-lock code |
 | `OMA-UX-AHEAD-5` | post | obligation | A jump status ("Location jumped…") resolves within 5 s of steady fixes at any speed up to 90 m/s | The status persists for more than 5 s of consistent fixes under 90 m/s | `no check`. Live, the status held indefinitely at 116 m/s, which is above the limit and so correct. This AC pins the boundary |
@@ -153,24 +153,26 @@ Ahead works today only behind `?engine=wasm`.
 | Alias | Tier | Polarity | Claim | Falsified if | Reading |
 |---|---|---|---|---|---|
 | `OMA-TECH-EDGE-7` | launch | prohibition | A cold load of `/` produces no CSP violation. The policy allows `https://static.cloudflareinsights.com` in `script-src` and `https://cloudflareinsights.com` in `connect-src`, so the Cloudflare Web Analytics beacon loads and reports (Q6). Pairs with `EDGE-6` | Any CSP violation in the console on a cold load of `/`, or the beacon script or its report request is blocked | **`refuted`**. Cloudflare injects `static.cloudflareinsights.com/beacon.min.js`, and the current `script-src` blocks it on every load |
-| `OMA-UX-PRIV-1` | launch | obligation | The app discloses in one plain line, reachable from Settings, that it uses Cloudflare Web Analytics, which is cookieless and collects aggregate page-view data (Q6). Pairs with `EDGE-7` | Analytics runs while no such line exists in the app | **`refuted`**. There is no disclosure (`SettingsDrawer.tsx`). See the note under Q6 about Fondue |
+| `OMA-UX-PRIV-1` | — | — | Not an owner decision (Q6). The card did not require a disclosure line. Do not add one. Keeping Cloudflare Web Analytics and allowing the beacon is `EDGE-7` and the baseline `EDGE-6` amendment. The beacon allowance is SPE-338 | A disclosure line is required by this AC | Pre-card reading, kept: **`refuted`**. There is no disclosure (`SettingsDrawer.tsx`). See the note under Q6 about Fondue |
 | `OMA-SEC-EDGE-8` | launch | obligation | HTML responses carry `Strict-Transport-Security`, `Referrer-Policy: strict-origin-when-cross-origin` (or stricter), and a `Permissions-Policy` that limits geolocation to `self` | Any of the three is missing | **`refuted`**. Only `CSP` and `X-Content-Type-Options` are set |
 | `OMA-TECH-CI-1` | launch | obligation | A push to `main` deploys only after Verify (unit, Rust and e2e) passes on that commit | `deploy.yml` can run on a commit whose Verify failed | **`refuted`** (code). Deploy has no `needs:` on Verify and runs no tests itself |
 | `OMA-DATA-PIPE-3` | launch | obligation | The published `markers.json` is reproducible from the repo: the pipeline plus inputs pinned by SHA-256 give a byte-identical file, and the pipeline's bounds equal `DATA-PIPE-2`'s | A rebuild differs, or `TEXAS_BOUNDS` ≠ the AC's box | **`refuted`** (code). The #10485 fix is not in `coordinate-corrections.ts`, and the bounds differ |
 
-## 4. Owner decisions (answered 2026-10-21)
+## 4. Owner decisions (cards, 2026-10-21)
+
+Q7 is open. The other rows are the board's card answers. Q2 was not part of this correction.
 
 | # | Question | Answer | Effect |
 |---|---|---|---|
-| Q1 | Does Ahead graduate from the flag? | It becomes a default tab after `UX-AHEAD-2` (cue stacking) is fixed. Until then, the README stops advertising it | `AHEAD-2` gates the change; README edit in the spec-drift PR |
+| Q1 | Does Ahead graduate from the flag? | Ship it. The Ahead tab leaves `?engine=wasm`. The README keeps describing Ahead. It does not wait on `AHEAD-2` | Product work is SPE-336 |
 | Q2 | I3: deep links? | Yes: `/marker/N` with SPA fallback | `NAV-2` stays (post-launch) |
-| Q3 | I4: default keyboard? | Text keyboard by default. A digits-only query still does a number lookup. No toggle for now | `UX-INPUT-1` reworded (launch) |
-| Q4 | Learn More at launch? | Hide it until research files ship. Retire `LEARN-*`, `FEAT-1` and `EDGE-5` with that as the written reason. Replace `HOME-1`'s featured markers with a short intro and example queries | Retirements recorded in the baseline; `HOME-1` reworded; `HIDE-1` added (launch) |
-| Q5 | I6: map tiles and icons? | Keep public OSM for launch on the single `tile.openstreetmap.org` host. Serve pin icons from the site instead of unpkg. Revisit a keyed provider only if traffic grows | `MAP-4` reworded, `MAP-5` added (post-launch). CSP `img-src` can then drop `https://unpkg.com` and name `https://tile.openstreetmap.org` |
-| Q6 | Cloudflare Web Analytics? | Keep it. Allow `static.cloudflareinsights.com` in `script-src` and `cloudflareinsights.com` in `connect-src`, and add a disclosure line, matching Fondue | `EDGE-6` amended in the baseline; `EDGE-7` reworded; `PRIV-1` added (launch) |
-| Q7 | I5: Nearby cost? | Re-query after about 50 m of movement. Leave WASM-by-default for later | `NEAR-7` added (post-launch) |
+| Q3 | I4: default keyboard? | Add a toggle. Numeric stays the default (SPE-194). A digits-only query still does a number lookup | `UX-INPUT-1` reworded (launch). Product work is SPE-337 |
+| Q4 | Learn More at launch? | Ship the research files (SPE-185). Do not retire `LEARN-*`, `FEAT-1` or `EDGE-5`. Do not hide Learn More | No retirement in the baseline. `HIDE-1` is not the decision. Featured markers stay until the files ship |
+| Q5 | I6: map tiles and icons? | Keep the 2026-10-14 call. Public OpenStreetMap stays until SPE-188. No host change, and no pin-icon move, in this pass | `MAP-4` and `MAP-5` do not require a new host or a pin move |
+| Q6 | Cloudflare Web Analytics? | Keep it and allow the beacon. No disclosure line | `EDGE-6` keeps the beacon-host amendment. The beacon allowance is SPE-338. `PRIV-1` is not required. CSP is not changed in this issue |
+| Q7 | I5: Nearby cost? | Open. Not decided. The board asked for a brief | `OMA-UX-NEAR-7` is unmarked as an owner decision. A 50 m re-query is not recorded as an answer |
 
-**Note on Q6 and Fondue (2026-10-21).** On `fondue.specdlc.com` the Cloudflare beacon loads. But there is no CSP header, and no disclosure line is visible on the page. Fondue's own `ac/FONDUE-SITE-4.md` claims the site "sends no analytics or visitor data", so that AC is refuted by its live site. So "matching Fondue" here means: the same analytics product, but with the CSP allowance and the disclosure that Fondue doesn't have yet. `PRIV-1`'s wording is a proposal, and Fondue may need the same fix.
+**Note on Q6 and Fondue (2026-10-21).** On `fondue.specdlc.com` the Cloudflare beacon loads. There is no CSP header, and no disclosure line is visible on the page. Fondue's own `ac/FONDUE-SITE-4.md` claims the site "sends no analytics or visitor data", so that AC is refuted by its live site. Q6 keeps Cloudflare Web Analytics and allows the beacon. It does not add a disclosure line. That line was not on the card. `PRIV-1` is not an owner requirement.
 
 ## 5. Spec drift to clean up (no behaviour change)
 
@@ -196,7 +198,7 @@ These are handled in a separate pull request, `specs/drift-cleanup-2026-10-21`. 
 - `design/wasm-engine.md` says a cue is "spoken". It isn't (see `AHEAD-3`).
 
 **`README.md`**
-- It says "Both paths answer the same commands" and presents Ahead as a feature. The default path has no Ahead (Q1).
+- Q1 keeps the description of Ahead: the intro sentence (nearby, and the marker coming up on the road), the engine sentence (both paths answer the same commands, including ahead), and the "Nearby and ahead" bullet. The README does not stop advertising Ahead.
 
 **Smaller items**
 - `src/engine/__tests__/datasetPath.ts:5` calls `markers.json` gitignored. It's tracked.
