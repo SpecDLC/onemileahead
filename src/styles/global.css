@@ -167,6 +167,11 @@ body {
   opacity: 0.8;
 }
 
+.marker-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 .marker-card-header {
   display: flex;
   align-items: center;
@@ -681,6 +686,20 @@ body {
 
 .featured-card:active {
   opacity: 0.85;
+}
+
+.featured-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.marker-popup-body {
+  cursor: pointer;
+}
+
+.marker-popup-body:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .featured-card-header {

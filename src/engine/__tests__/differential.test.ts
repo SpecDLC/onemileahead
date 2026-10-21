@@ -3,9 +3,11 @@
  * Differential tests: the existing TypeScript functions and the WASM engine on the same inputs.
  * These are the main proof that the Rust port is right [REQ:wasm-engine AC-WE-08].
  *
- * Always runs on the committed I-35 fixture. Also runs on the full THC dataset when
- * the dataset exists locally (see datasetPath.ts: public/data/markers.json or $OMA_MARKERS). When it
- * doesn't, the full-dataset suite is reported as skipped rather than silently left out.
+ * Always runs on the committed I-35 fixture. Nearby also runs on the full THC dataset
+ * when that file exists (see datasetPath.ts: public/data/markers.json or $OMA_MARKERS).
+ * Lookup on that file uses a deterministic sample. A prefix scan of every row took
+ * 83s on a fast host and CI stops the case at 120s. When the file is absent, the
+ * full-dataset suite is skipped rather than silently left out.
  */
 import { describe, it, expect, beforeAll } from 'vitest';
 import { existsSync, readFileSync, readdirSync } from 'fs';
@@ -118,6 +120,36 @@ describe('TS ↔ WASM: geo functions', () => {
   });
 });
 
+/** Full-file lookup cap. The I-35 fixture is smaller, so it is not sampled. */
+const LOOKUP_SAMPLE_LIMIT = 1_500;
+
+/**
+ * Keep every 1- and 2-digit marker number, then stride the rest.
+ * Short numbers are what make "2" sort before "10". File order in, id order out.
+ */
+function sampleLookupMarkers(markers: Marker[], limit: number): Marker[] {
+  if (markers.length <= limit) return markers;
+  const pinned: Marker[] = [];
+  const rest: Marker[] = [];
+  for (const marker of markers) {
+    if (marker.markerNumber.trim().length <= 2) pinned.push(marker);
+    else rest.push(marker);
+  }
+  const picked = new Map<number, Marker>();
+  for (const marker of pinned) {
+    if (picked.size >= limit) break;
+    picked.set(marker.id, marker);
+  }
+  const room = limit - picked.size;
+  if (room <= 0) return [...picked.values()].sort((a, b) => a.id - b.id);
+  // Evenly spaced indexes. A fixed stride stops short of `room` when it does not divide the file.
+  for (let n = 0; n < room && n < rest.length; n++) {
+    const marker = rest[Math.floor((n * rest.length) / room)];
+    if (!picked.has(marker.id)) picked.set(marker.id, marker);
+  }
+  return [...picked.values()].sort((a, b) => a.id - b.id);
+}
+
 const DATASETS: [string, boolean, () => Marker[]][] = [
   ['I-35 fixture', true, () => FIXTURE],
   [`full THC dataset (${FULL_PATH})`, HAS_FULL, () => JSON.parse(readFileSync(FULL_PATH, 'utf8'))],
@@ -174,10 +206,16 @@ describe.each(DATASETS)('TS ↔ WASM on the %s', (_name, available, getMarkers) 
   }, 120_000);
 
   it.skipIf(!available)('lookup: identical to searchByMarkerNumber', async () => {
+    const pool = sampleLookupMarkers(markers, LOOKUP_SAMPLE_LIMIT);
+    if (pool.length !== markers.length) {
+      expect(pool.length).toBe(LOOKUP_SAMPLE_LIMIT);
+      engine.load(pool);
+      await seedDb(pool);
+    }
     const r = rng(4);
     const qs = new Set<string>(['', '  ', '1', '12', '123', '9', '99999', '0', 'abc', ' 95 ', '1 2']);
     for (let i = 0; i < 80; i++) {
-      const m = markers[Math.floor(r() * markers.length)];
+      const m = pool[Math.floor(r() * pool.length)];
       qs.add(m.markerNumber);
       qs.add(m.markerNumber.slice(0, 1 + Math.floor(r() * m.markerNumber.length)));
     }

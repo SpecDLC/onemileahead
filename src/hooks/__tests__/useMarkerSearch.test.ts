@@ -138,3 +138,35 @@ describe('useMarkerSearch [REQ:search]', () => {
     expect(result.current.results.map((m) => m.markerNumber)).toEqual(['12']);
   });
 });
+
+describe('marker number forms [OMA-FUNC-LOOKUP-5]', () => {
+  beforeEach(async () => {
+    await db.markers.clear();
+    await db.markers.bulkAdd([
+      makeMarker({ id: 95, markerNumber: '95', title: 'Alamo Cenotaph', city: 'San Antonio', county: 'Bexar' }),
+      makeMarker({ id: 184, markerNumber: '184', title: 'A marker whose text mentions 95', markerText: 'Erected beside marker 95.' }),
+      makeMarker({ id: 695, markerNumber: '695', title: 'Highway 95', markerText: 'Along highway 95.' }),
+      makeMarker({ id: 3935, markerNumber: '3935', title: 'Number containing 95', markerText: 'See #95 in the notes.' }),
+      makeMarker({ id: 950, markerNumber: '950', title: 'Prefix neighbour' }),
+    ]);
+  });
+
+  it.each(['#95', 'marker 95', 'Marker #95'])(
+    '%s returns marker 95 first [AC:OMA-FUNC-LOOKUP-5]',
+    async (query) => {
+      const { result } = renderHook(() => useMarkerSearch(query));
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+      expect(result.current.results[0]?.markerNumber).toBe('95');
+      const numbers = result.current.results.map((m) => m.markerNumber);
+      expect(numbers).not.toContain('3935');
+      expect(numbers).not.toContain('184');
+      expect(numbers).not.toContain('695');
+    },
+  );
+
+  it('still returns marker 95 first for a plain number [AC:OMA-FUNC-LOOKUP-1]', async () => {
+    const { result } = renderHook(() => useMarkerSearch('95'));
+    await waitFor(() => expect(result.current.isLoading).toBe(false));
+    expect(result.current.results.map((m) => m.markerNumber)).toEqual(['95', '950']);
+  });
+});
