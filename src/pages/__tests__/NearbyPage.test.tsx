@@ -51,7 +51,7 @@ describe('NearbyPage [REQ:nearby]', () => {
       expect(screen.getByText('Close Marker')).toBeInTheDocument();
     });
 
-    const cards = screen.getAllByRole('article');
+    const cards = screen.getAllByRole('button', { name: /Marker/ });
     expect(cards.length).toBeGreaterThanOrEqual(2);
   });
 
