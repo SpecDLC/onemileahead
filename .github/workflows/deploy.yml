@@ -8,7 +8,7 @@
 # CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID are SpecDLC organization Actions secrets
 # selected for SpecDLC/fondue, SpecDLC/onemileahead, and SpecDLC/tandem.
 # GitHub does not scope them to an environment. Any job in those repositories can read them.
-# environment: preview adds Patrick (CoeusCC) as a required reviewer on the jobs that set it.
+# environment: preview adds the repository owner as a required reviewer on the jobs that set it.
 # environment: production has no required reviewer. Merging to main is the production approval.
 # The site build is `npm ci && npm run build`. Fondue builds a Rust demo page; this repo does not.
 name: Deploy

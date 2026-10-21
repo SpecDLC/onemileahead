@@ -1,0 +1,10 @@
+target/
+dist/
+node_modules/
+.wrangler/
+coverage/
+test-results/
+playwright-report/
+.env
+.env.*
+.dev.vars*

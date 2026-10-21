@@ -1,0 +1,1487 @@
+{
+ "source": "THC Atlas export 2026-10-13 (data/csv), UTM-converted coordinates via csvRowToMarker",
+ "route": "fixtures/i35-route.json",
+ "markers": [
+  {
+   "id": 109,
+   "markerNumber": "118",
+   "title": "Alico Building",
+   "county": "McLennan",
+   "city": "Waco",
+   "lat": 31.556905,
+   "lng": -97.131857,
+   "markerText": "Designed and built by Sanguinet & Staats and Roy E. Lane, the 22-story home office of the Amicable Liife Insurance Co. was erected in 1911 as publicity for the new firm. The structure's Beaux Arts styling features rich terra cotta details on the top four floors. For many years the tallest building in the southwest, it withstood the 1953 Waco tornado. Today the Alico Building serves as a landmark in Waco and as a reminder of the city's early economic growth. Recorded Texas Historic Landmark - 1982",
+   "markerDate": "1982",
+   "subjectCodes": [
+    "banks, bankers, banking topics",
+    "buildings",
+    "Beaux Arts",
+    "commercial buildings",
+    "design and construction"
+   ],
+   "isRTHL": true,
+   "size": "Medallion and Plate"
+  },
+  {
+   "id": 409,
+   "markerNumber": "435",
+   "title": "Blevins Community and School",
+   "county": "Falls",
+   "city": "Eddy",
+   "lat": 31.224121,
+   "lng": -97.207018,
+   "markerText": "The community of Blevins began about 1860, when Texas Revolution veteran Thomas H. Barron and his family settled near Deer Creek. The Rev. Isaac Taylor operated a school for area children from the 1870s until 1885, when Blevins School opened. A public school district, formally organized in 1916, served students in a nine-square mile area until 1939. A post office operated from 1886 to 1904, and at its height the community boasted two general stores, two cotton gins, two churches, a blacksmith shop, and ice house.",
+   "markerDate": "1992",
+   "subjectCodes": [
+    "cities and towns",
+    "educational topics"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 461,
+   "markerNumber": "495",
+   "title": "Brazos River Transmission Electric Cooperative",
+   "county": "McLennan",
+   "city": "Waco",
+   "lat": 31.469593,
+   "lng": -97.181394,
+   "markerText": "The first generation and transmission electric cooperative in Texas, this corporation was organized in February 1941 by eleven small electric cooperatives which had been established under the rural electrification administration. With a goal of providing affordable wholesale power costs and improved service to its members, the cooperative first established offices in Fort Worth. In 1945 the headquarters were moved to Waco, and service eventually was extended to a large area of central and North Texas.",
+   "markerDate": "1991",
+   "subjectCodes": [
+    "inventors and inventions",
+    "Federal programs",
+    "water topics"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 504,
+   "markerNumber": "542",
+   "title": "Bruceville Baptist Church",
+   "county": "McLennan",
+   "city": "Bruceville",
+   "lat": 31.321845,
+   "lng": -97.238422,
+   "markerText": "This church was organized as Salem Baptist Church about 1870-71 in the town of Mastersville. Early worship services were held in the home of the minister, and in an arbor. The church name was changed in 1884 to Mastersville Baptist Church. The congregation moved 2 miles south to the new railroad town of Bruceville. In 1896 a sanctuary was built that stood until 1975 when a new church building was erected in its place. The church supports many outreach programs in the U.S. and in foreign nations, and has served the community for more than 125 years. (1996)",
+   "markerDate": "1996",
+   "subjectCodes": [
+    "Baptist denomination",
+    "churches"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 669,
+   "markerNumber": "733",
+   "title": "Carnegie Library Building",
+   "county": "Bell",
+   "city": "Belton",
+   "lat": 31.057433,
+   "lng": -97.463266,
+   "markerText": "Completed in 1904, this brick library building was funded by a personal contribution from the noted New York industrialist and benefactor Andrew S. Carnegie. Ben D. Lee, builder of the Bell County Courthouse, served as contractor. Designed by the firm of Smith and Moore and made of bricks from a local kiln, the structure features elaborate detailing of the Beaux Arts classical style. When the library opened in 1905, 1500 volumes were contributed by members of the Woman's Wednesday Club. Public library facilities were located here until 1975. Recorded Texas Historic Landmark - 1981",
+   "markerDate": "1981",
+   "subjectCodes": [
+    "Beaux Arts",
+    "design and construction",
+    "libraries"
+   ],
+   "isRTHL": true,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 701,
+   "markerNumber": "767",
+   "title": "Watt Caufield Ranch",
+   "county": "McLennan",
+   "city": "Waco vicinity",
+   "lat": 0,
+   "lng": 0,
+   "markerText": "This two-story ranch house was erected about 1888 for Watt W. Caufield (1860-1935) and his wife, Kate McLennan Caufield (1861-1957), granddaughter of pioneer Neil McLennan, for whom McLennan County was named. Caufield's uncle, surveyor and contractor Watson Caufield, who came to Texas from Ireland, constructed the residence of lumber hauled from Houston. It was built near a spring and creek on land given to Caufield by his father, Henry J. Caufield, a prominent rancher. Later enlarged and remodeled, the structure is owned (1976) by Caufield descendants. (1976)",
+   "markerDate": "1976",
+   "subjectCodes": [
+    "ranches/ranching",
+    "houses, residential buildings"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 1426,
+   "markerNumber": "1591",
+   "title": "Ferguson Home",
+   "county": "Bell",
+   "city": "Temple",
+   "lat": 31.10323,
+   "lng": -97.343181,
+   "markerText": "Built 1907 for James E. and Miriam A. Ferguson, each later elected twice to governor's office in Texas. Mrs. Ferguson was the first woman elected Governor in any state. During their terms the Texas Highway Department and public schools achieved great importance. This was family home until Jim Ferguson became Governor in 1915, and again from 1917 to 1925, when Mrs. Ferguson was first inaugurated. Recorded Texas Historic Landmark - 1967",
+   "markerDate": "1967",
+   "subjectCodes": [
+    "governors",
+    "houses, residential buildings",
+    "women, women's history topics"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion and plate"
+  },
+  {
+   "id": 1447,
+   "markerNumber": "1616",
+   "title": "First Baptist Church of Belton",
+   "county": "Bell",
+   "city": "Belton",
+   "lat": 31.061426,
+   "lng": -97.462238,
+   "markerText": "The First Baptist Church of Belton was organized in the summer of 1853 under the leadership of the Rev. Solomon G. O'Bryan and the Rev. David Fisher. There were eight charter members, and the congregation met in a small frame building on Pearl Street on the north side of Nolan Creek. Early visiting preachers included John Clabaugh and Judge R.E. B. Baylor. Clabaugh was called as permanent pastor of the church in 1856 and held services once a month until the beginning of the Civil War. Visiting ministers served the congregation during the war. A revival held in 1864 at the courthouse by the Rev. W.W. Harris resulted in many new members for the church. The Rev. M.V.Smith began an eighteen-year pastorate in Belton in January 1875. The congregation, which had been meeting in other churches, built a stone structure on the east side of Main Street, south of the present church buildings. After the stone church was destroyed by fire in 1947, construction began on the present structure at 506 N. Main. The facilities have been enlarged over the years to serve the growing congregation. With service to its congregation and the community, the church has contributed to Belton's history. Texas Sesquicentennial 1836-1986",
+   "markerDate": "1986",
+   "subjectCodes": [
+    "Baptist denomination",
+    "churches"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 1931,
+   "markerNumber": "2154",
+   "title": "The George Butler - Jesse Harrison House",
+   "county": "McLennan",
+   "city": "Waco",
+   "lat": 31.569888,
+   "lng": -97.119276,
+   "markerText": "One of first brick houses east of Brazos River. Built by land buyer Butler and his wife Emiline, in 1869--before east side became a part of Waco in 1871. Historic guests here have included Governor Pat Neff.",
+   "markerDate": "1971",
+   "subjectCodes": [
+    "houses, residential buildings"
+   ],
+   "isRTHL": true,
+   "size": "Medallion and Plate"
+  },
+  {
+   "id": 2034,
+   "markerNumber": "2267",
+   "title": "Greathouse Cemetery",
+   "county": "Bell",
+   "city": "Temple vicinity",
+   "lat": 31.030068,
+   "lng": -97.339061,
+   "markerText": "The Rev. Early Greathouse (1810-1885) was ordained to the ministry in Georgia in 1846. He moved to Alabama in 1852, where he served in the state legislature and the Constitutional Conventions of 1865 and 1867. In 1870 Greathouse and his family arrived in Texas and bought land south of the present site of Temple. He built the first cotton gin in the area, and soon organized both the Knob Creek and Mt. Vernon Baptist Churches. He also set aside a tract of land to be used for a cemetery, probably in 1871. Though originally used as a family burial ground, other people of the community were later interred here. The oldest marked grave is that of Mattie Lee Clopton (1863-1875), granddaughter of Early Greathouse. Also buried here are several former slaves who came to Texas with the Greathouse family, and veterans of the Civil War and both world wars, as well as one survivor of the Battle of San Jacinto. The Rev. Early Greathouse and his wife, the former Susan Talley, were the parents of ten children. In 1884 the Rev. and Mrs. Greathouse deeded a large tract of land to a daughter, who in turn sold one acre to the trustees of the Greathouse Cemetery Association of Bell County in 1908. (1986)",
+   "markerDate": "1986",
+   "subjectCodes": [
+    "cemetery",
+    "Baptist denomination",
+    "religious leaders"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 2774,
+   "markerNumber": "3097",
+   "title": "Little Flock Cemetery and Primitive Baptist Church",
+   "county": "Bell",
+   "city": "Temple",
+   "lat": 31.075659,
+   "lng": -97.288222,
+   "markerText": "On land donated by J.W. and Mary Moore, owners of a pioneer gristmill and cotton gin. First burial (about 1860) was a stranger who died on a wagon trip from West Texas to Arkansas. Other old graves: fever victims and faithful Moore family servants. Little Flock (named for text in Luke 12:32) was a meeting place for seven congregations camping here annually on first Sunday in May to worship with ritual foot washing. Sunshine Church, founded before 1848, moved here in 1879. (1969)",
+   "markerDate": "1969",
+   "subjectCodes": [
+    "cemetery",
+    "Baptist denomination",
+    "churches"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 3108,
+   "markerNumber": "3463",
+   "title": "Mooreville Cemetery",
+   "county": "Falls",
+   "city": "Mooreville",
+   "lat": 31.30512,
+   "lng": -97.137472,
+   "markerText": "Irishman Robert Moore was the first person to settle permanently in this area. Arriving in the 1850s, he opened a general store on top of a hill south of Cow Bayou. By 1859 several other families lived here and the community became known as Mooreville. Confederate veteran Edward McCullough (1834-1902) came to Morreville in 1865 and later purchased land that included this site. During his ownership this cemetery was established. The graveyard appears to have been used by the community at large from its beginning; the earliest marked graves, which date to 1866, bear surnames of Martin, Grayum, and Russell. The burial ground's existence was first recorded in deed records in 1876, when Edward McCollough deeded land for a burial ground. Since World War II, the historic burial ground has been maintained by the Mooreville Cemetery Association, which was formally established in 1973. The association counts among its members many descendants of Mooreville's original permanent settlers. The Mooreville Cemetery is an important cultural resource in this area. It remains a tangible reminder of this community's pioneer heritage. (1992)",
+   "markerDate": "1992",
+   "subjectCodes": [
+    "cemetery"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 3864,
+   "markerNumber": "4304",
+   "title": "Robertson",
+   "county": "McLennan",
+   "city": "Waco",
+   "lat": 31.53819,
+   "lng": -97.112953,
+   "markerText": "The only father-son generals in the Civil War, except for Robert E. Lee and his son, are buried 1 block south. Gen. Jerome B. Robertson, Commander of Hood's Texas Brigade, Nov. 1862 to Jan. 1864, died in Waco Jan. 7, 1890. His son, Gen. Felix H. Robertson, Army of Tenn., died in Waco on April 20, 1928.   (1965)",
+   "markerDate": "1965",
+   "subjectCodes": [
+    "cities and towns",
+    "Civil War",
+    "military topics"
+   ],
+   "isRTHL": false,
+   "size": "20\" x 20\""
+  },
+  {
+   "id": 3866,
+   "markerNumber": "4306",
+   "title": "Mrs. Alfred Robinson, Sr. Home",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.270413,
+   "lng": -97.746702,
+   "markerText": "(no text - medallion only)",
+   "markerDate": "1962",
+   "subjectCodes": [
+    "houses, residential buildings",
+    "women"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion"
+  },
+  {
+   "id": 4002,
+   "markerNumber": "4461",
+   "title": "Saint Luke African Methodist Espiscopal Church",
+   "county": "McLennan",
+   "city": "Waco",
+   "lat": 31.57168,
+   "lng": -97.117683,
+   "markerText": "According to oral tradition, this congregation began in 1886 as an evening sunday school which met on Elm Street. The Rev. Charlie Gipson served as first pastor. A church building was constructed in 1906, during the pastorate of the Rev. L.M. Holmes, and the congregation has worshiped at the current site since about 1920. Early Pastor E.J. Howard was elected Bishop of the African Methodist Episcopal Church in 1936. Over the years, St. Luke A.M.E. church has provided a significant source of service and leadership to Waco's black community.",
+   "markerDate": "1986",
+   "subjectCodes": [
+    "African American topics",
+    "African Methodist or Colored/Christian Methodist Episcopal",
+    "churches"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 4033,
+   "markerNumber": "4493",
+   "title": "Salado Creek",
+   "county": "Bell",
+   "city": "Salado",
+   "lat": 30.943243,
+   "lng": -97.53739,
+   "markerText": "Gushing limestone springs, abundant fish, flowers, and trees have long made the banks of Salado Creek a good home site. Indians camped beside stream; Spanish explorers named it; the first Anglo-American settler was Archibald Willingham, 1851. College and town of Salado were built on creek, 1860. Stream once had 8 mills, thus was county industrial center. Chisholm Cattle Trail crossed it, as did Dallas-San Antonio Stage Line. The 35-mile creek is one of many which rise at the Balcones Fault--an outstanding North American region of springs. Recorded Texas Natural Landmark - 1967",
+   "markerDate": "1967",
+   "subjectCodes": [
+    "water topics",
+    "Native Americans"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 4034,
+   "markerNumber": "4494",
+   "title": "Salado Methodist Church",
+   "county": "Bell",
+   "city": "Salado",
+   "lat": 30.941443,
+   "lng": -97.528866,
+   "markerText": "Building erected 1890 for a congregation organized 1854 at site on Salado Creek. Circuit riders serving congregation included the Rev. J.E. Ferguson, father of a Texas governor. Building committee for this church: J.L. Bailey, W.H. Cawthon, J.M. Porter. Charlie Bailey and Wallie Harkey drove wagons to haul the lumber from Austin, about 50 miles to the south. Original members' families still worship here. Recorded Texas Historic Landmark - 1969",
+   "markerDate": "1969",
+   "subjectCodes": [
+    "churches",
+    "Methodist (Methodist Episcopal and United Methodist) denomination"
+   ],
+   "isRTHL": true,
+   "size": "Medallion & Plate"
+  },
+  {
+   "id": 4114,
+   "markerNumber": "4579",
+   "title": "Santa Fe Memorial Hospital, Inc.",
+   "county": "Bell",
+   "city": "Temple",
+   "lat": 31.09312,
+   "lng": -97.357567,
+   "markerText": "The first hospital in Temple, this institution opened in 1891 for employees of the Gulf, Colorado & Santa Fe Railroad. The first section of the present building, completed in 1908, replaced an earlier frame structure. Until 1948 nursing care was provided by Sisters of Charity of the Incarnate Word. Early staff members Dr. A.C. Scott, chief surgeon, and Dr. R.R. White later formed the noted Scott and White Clinic. Now a general care facility, Santa Fe Memorial Hospital serves as a reminder of Temple's early development as a railroad town. (1982)",
+   "markerDate": "1982",
+   "subjectCodes": [
+    "hospitals",
+    "railroads"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 4145,
+   "markerNumber": "4613",
+   "title": "Scott & White Hospital",
+   "county": "Bell",
+   "city": "Temple",
+   "lat": 31.078434,
+   "lng": -97.364101,
+   "markerText": "The Gulf, Colorado, and Santa Fe Railway established the town of Temple in 1881 and located the Santa Fe Railway Hospital at Temple in 1891. Dr. Arthur Carroll Scott, Sr. (1865-1940) became Chief Surgeon of the Railway in 1892. In 1895 he hired Dr. Raleigh R. White, Jr., (1871-1917) who was promoted to co-chief Surgeon by 1897. Doctors Scott and White formed a private practice partnership in 1897, and in 1904 they opened a hospital known as the Temple Sanitarium. Located in downtown Temple, it was renamed Scott & White Hospital in 1922 and expanded to six city blocks. The hospital became a training facility for nurses and doctors. Several new divisions of specialized medicine were added after World War II, and the hospital gained a national reputation for medical research. Following relocation to this site in 1963, the hospital expanded. By 1995 more than 6,000 people were employed here, and over one million patient visits were recorded. The largest group practice in Texas, Scott & White continues as a leader in the development of health care and has become a world-renowned medical facility. (1997)",
+   "markerDate": "1997",
+   "subjectCodes": [
+    "hospitals"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 4244,
+   "markerNumber": "4719",
+   "title": "Site of 1920's Factory of the Temple Monoplane",
+   "county": "Bell",
+   "city": "Temple",
+   "lat": 31.09194,
+   "lng": -97.388453,
+   "markerText": "Pioneer commercial aircraft developed by engineering genius George W. Williams, who with Roy Sanderford, George Carroll, and his brother E.K. Williams, formed Texas Aero Corporation in 1927. The firm obtained (June 23, 1928) Approved Type Certificate No. 45 of the U.S. Department of Commerce, to make and sell the Temple Monoplane. Primarily designed for airmail, this craft was equipped for night flight - an innovation in that era. Despite successes, plant closed after 1929 Wall Street crash and death on Aug. 15, 1930, of George Williams in a student training disaster. (1970)",
+   "markerDate": "1970",
+   "subjectCodes": [
+    "aviation"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 4800,
+   "markerNumber": "5356",
+   "title": "The Howard House",
+   "county": "McLennan",
+   "city": "Moody",
+   "lat": 31.30631,
+   "lng": -97.362909,
+   "markerText": "A resident of Moody when the town was founded in 1881, Charles Howard (1862-1915) operated a general store and became a prosperous businessman. He built this elegant residence for his family in 1900. A St. Louis architectural firm drew the house plans and local contractor Elmo Routh supervised the construction. The Queen Anne detailing includes a turret and decorative fish scale shingling. The Howard family owned the property until 1973. Recorded Texas Historic Landmark - 1978",
+   "markerDate": "1978",
+   "subjectCodes": [
+    "houses, residential buildings",
+    "Queen Anne (Architectural style)",
+    "pioneers"
+   ],
+   "isRTHL": true,
+   "size": "Medallion and Plate"
+  },
+  {
+   "id": 5003,
+   "markerNumber": "5577",
+   "title": "Twelve Oaks",
+   "county": "Bell",
+   "city": "Salado",
+   "lat": 30.945506,
+   "lng": -97.532267,
+   "markerText": "Greek Revival mansion built of stone from adjacent land, for B.D. McKie, Texas doctor who fought and was wounded in Mexican and Civil Wars. Restoration by parents of Lt. Henry Clay de Grummond, Jr., World War II combat hero, is dedicated to his memory. Recorded Texas Historic Landmark - 1964",
+   "markerDate": "1962",
+   "subjectCodes": [
+    "Greek Revival (Architectural style)",
+    "houses, residential buildings"
+   ],
+   "isRTHL": true,
+   "size": "Medallion and Plate"
+  },
+  {
+   "id": 5105,
+   "markerNumber": "5692",
+   "title": "Site of Waco Indian Village",
+   "county": "McLennan",
+   "city": "Waco",
+   "lat": 31.558695,
+   "lng": -97.13761,
+   "markerText": "On this site stood the village of a semi-civilized tribe, the Waco Indians who made a treaty with Stephen F. Austin in 1824 but were driven out by Comanches about 1837. From them the city of Waco, laid out by Major George B. Erath in 1849, takes its name. Erected by the State of Texas 1936, marker added in 2014: This marker, placed by the McLennan County Historical Commission on October 10, 2014, corrects an error on the original centennial marker. Further research has shown that it was the Cherokees, rather than the Comanches, who besieged the Wacos/Huacos Indians in 1829-1837, causing them to disperse gradually and move on to other areas.",
+   "markerDate": "1936",
+   "subjectCodes": [
+    "Native Americans"
+   ],
+   "isRTHL": false,
+   "size": "1936 Centennial Marker (gray granite)"
+  },
+  {
+   "id": 5464,
+   "markerNumber": "6236",
+   "title": "The Curtis Mansion",
+   "county": "Bell",
+   "city": "Belton",
+   "lat": 31.065733,
+   "lng": -97.460543,
+   "markerText": "Cotton broker William Ray Miller (1868-1954) and his wife Ida (Rogers) built this structure in 1902 and lived here with their large family about six years. Mrs. Miller was from Galveston, and had graduated from Baylor College (now Mary Hardin-Baylor). Born in Kentucky, Miller grew up in Belton, the son of a merchant. Noting the costliness of this house, some observers have called it \"A Monument to King Cotton.\" A. Lon and Cora (Lee) Curtis acquired the property in 1914. It became known as the Curtis Mansion because they and their descendants occupied it for the next 59 years. Lon Curtis (1872-1934) graduated from the University of Texas, took a second degree at the University of Michigan, and began practicing law in Temple, moving to Belton when he became County Attorney. He and his wife had one son, Lee. As new owners, the Curtises brought a decorator from Kansas City to modify the house to their tastes. Noted for its hospitality as well as its architecture, it remained a show place of the city. In 1973, Lee Curtis sold the mansion. It now is a complex of luxury suites, preserved as a relic of the cotton empire that once dominated the Brazos Valley. (1977)",
+   "markerDate": "1977",
+   "subjectCodes": [
+    "houses, residential buildings",
+    "Queen Anne (Architectural style)",
+    "Victorian (architectural term)"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 5544,
+   "markerNumber": "6419",
+   "title": "Smith-Clark-Smith House",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.277488,
+   "lng": -97.744805,
+   "markerText": "When the State Capitol burned in 1881, Scottish-born James Baird Smith (1843-1907) cleared the site and erected a temporary statehouse nearby. Salvaged bricks and stone, which he used to build this rent house about 1886, probably came from the burned capitol. The first tenant was noted Banker John G. Palm (1846-927 ). Later owner (1924) and occupant (1925-43) Lucille Clark, of a prominent Austin family, sold the property in 1959 to Mr. and Mrs. Homer D. Smith, who restored it. Recorded Texas Historic Landmark - 1975",
+   "markerDate": "1975",
+   "subjectCodes": [
+    "Scottish immigrants/immigration",
+    "houses, residential buildings"
+   ],
+   "isRTHL": true,
+   "size": "Medallion & Plate"
+  },
+  {
+   "id": 5585,
+   "markerNumber": "6461",
+   "title": "Clara Driscoll",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.287879,
+   "lng": -97.748097,
+   "markerText": "(April 2, 1881 - July 17, 1945) Patriot, philanthropist, writer, public figure. Born at St.Mary's, Refugio County; daughter of Robert and Julia Fox Driscoll, and descendant of a hero of San Jacinto; was educated in Texas, New York and France. In 1903 came her finest hour. When the public was shocked at plans for destroying The Alamo in San Antonio, she saved the shrine by buying it to give the State of Texas time to redeem and preserve it. In 1905-06 she published two novels, \"The Girl of La Gloria\" and \"In The Shadow of The Alamo\", and had on Broadway a musical comedy, \"Mexicana\". In 1922 organized the Pan-American Round Table in Austin; served as Democratic National Committee woman from Texas,1928-1944; was president of Daughters of the Republic of Texas, the Big Bend Park Association, and Corpus Christi Bank and Trust Company. This headquarters building of the Texas Federation of Women's Clubs is a monument to her generosity, for her 1939 gift of $92,000 paid off debts against it. In 1943 she gave her home, Laguna Gloria, to the Texas Fine Arts Association, for a museum. She died in Corpus Christi, leaving the bulk of her estate to a foundation for the care of crippled and diseased children. Outstanding Women of Texas Series, 1967",
+   "markerDate": "1967",
+   "subjectCodes": [
+    "women, women's history topics",
+    "women's clubs",
+    "writers and poets"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 7912,
+   "markerNumber": "9043",
+   "title": "Caldwell-Palm House",
+   "county": "Williamson",
+   "city": "Round Rock",
+   "lat": 30.571446,
+   "lng": -97.6714,
+   "markerText": "Tennessee native T. J. Caldwell (1812-1892) and his wife Letitia (1824-1877) built this house in 1860. The surrounding land provided limestone for the walls and cedars for the foundation, rafters, and floor joists. Caldwell's slaves helped build the house. The Caldwells' daughter, Mary, married Sven William Palm, and the couple bought the property from the Caldwell estate in 1892; the house stayed in the family more than 100 years. The two-story, five-bay, rough-cut limestone house features a center passage floor plan and a two-story wooden gallery. The surrounding Caldwell Heights community included a school, cotton gin, and this and other rural homes. Recorded Texas Historic Landmark - 1967",
+   "markerDate": "1967",
+   "subjectCodes": [
+    "houses, residential buildings"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion and plate"
+  },
+  {
+   "id": 7966,
+   "markerNumber": "9098",
+   "title": "Georgetown High School Building",
+   "county": "Williamson",
+   "city": "Georgetown",
+   "lat": 30.633831,
+   "lng": -97.672453,
+   "markerText": "Built in 1923-24 on the original site of Southwestern University, this structure served as Georgetown High School for over fifty years. Designed by Austin architect Charles H. Page and exhibiting influences of the Spanish Colonial Revival style of architecture, the building features a Baroque entryway with cast stone detailing that includes motifs of shells, flowers, urns, and garlands. A gymnasium was added to the back of the building in the 1940s. Recorded Texas Historic Landmark - 1988",
+   "markerDate": "1988",
+   "subjectCodes": [
+    "educational buildings",
+    "educational topics",
+    "design and construction",
+    "Spanish Colonial Revival (Architectural style)"
+   ],
+   "isRTHL": true,
+   "size": "Medallion & Plate"
+  },
+  {
+   "id": 7971,
+   "markerNumber": "9103",
+   "title": "The Harrell-Stone House",
+   "county": "Williamson",
+   "city": "Georgetown",
+   "lat": 30.631368,
+   "lng": -97.674308,
+   "markerText": "Built about 1895 for lumberman Henry W. Harrell, this Victorian house resembles others erected in this neighborhood by the C. S. Belford Lumber Co. It was sold in 1907 to storekeeper W. F. Magee. In 1937 the structure was purchased by Judge Samuel Vaughan Stone, civic leader and county judge for 35 years, and his wife Berenice, who restored it. Occupied by three prominent families, this residence has been the scene of numerous social and church gatherings. Recorded Texas Historic Landmark - 1976",
+   "markerDate": "1976",
+   "subjectCodes": [
+    "houses, residential buildings",
+    "design and construction"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion and plate"
+  },
+  {
+   "id": 7977,
+   "markerNumber": "9109",
+   "title": "Hutto United Methodist Church",
+   "county": "Williamson",
+   "city": "Hutto",
+   "lat": 30.546082,
+   "lng": -97.56081,
+   "markerText": "This church was formed from two earlier congregations that worshiped in this area. In the late 1870s an American Methodist fellowship began meeting in the Shiloh Schoolhouse (3 mi. SE). They later shared the building of the Hutto Cumberland Presbyterian Church until a separate sanctuary was constructed. Area Swedish Methodists began meeting in homes with visiting ministers before starting a church in 1892. A Hutto sanctuary served the members until a new structure was dedicated at this site in 1911. The two churches united as one congregation in November 1938.   (1981)",
+   "markerDate": "1981",
+   "subjectCodes": [
+    "churches",
+    "Methodist denomination",
+    "Swedish immigration"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 8180,
+   "markerNumber": "9315",
+   "title": "William M. Owen House Complex",
+   "county": "Williamson",
+   "city": "Round Rock",
+   "lat": 30.51519,
+   "lng": -97.690014,
+   "markerText": "The earliest structure in this complex is the one-story stone building, constructed about 1853. It originally housed a mercantile store and the first permanent post office for Round Rock, both operated by Thomas C. Oatts, the town's first postmaster. Built on the pioneer road from Austin to Georgetown, it was part of Round Rock's early development. The two-story home was built about 1870 and for many years was the residence of Dr. William M. Owen, a prominent local physician and businessman. Both buildings reflect the style of other area structures of the 19th century. Recorded Texas Historic Landmark - 1982",
+   "markerDate": "1982",
+   "subjectCodes": [
+    "post office",
+    "commercial buildings",
+    "houses, residential buildings"
+   ],
+   "isRTHL": true,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 8230,
+   "markerNumber": "9365",
+   "title": "Trinity Lutheran College",
+   "county": "Williamson",
+   "city": "Round Rock",
+   "lat": 30.511411,
+   "lng": -97.668916,
+   "markerText": "Founded by the Augustana Lutheran Synod, in 1904 synod representatives, seeking a location, selected Round Rock because of an offer of a well, 14 city lots, and freight concessions on building materials hauled by International & Great Northern Railroad. Cornerstone was laid on July 13, 1905, for a three-story native stone school building. With Dr. J. A. Stamline serving as president, first session opened Oct. 2, 1906. There were four faculty members, 48 academic students, and 11 enrolled in the music department. Total enrollment rose to 96 during the first year. Successive presidents were Alfred Anderson, 1909-1914; Theodore Seashore, 1914-1921; Dr. J. A. Stamline and Oscar Nelson, ad interim, 1921-1923; and Harry A. Alden, 1923-1929. Despite such recognition as state accreditation (achieved 1920), school failed financially. In 1929 it merged with Evangelical Lutheran College, which was founded in 1891 at Brenham, moved to Seguin 1912, and with this merger became Texas Lutheran College. On the vacated Round Rock campus, Lutheran Welfare Society on Oct. 9, 1929, opened Trinity Lutheran Homes, to care for children and aged persons. In 1972 only one of the former college buildings still survives.",
+   "markerDate": "1972",
+   "subjectCodes": [
+    "educational topics",
+    "Lutheran denomination"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 10470,
+   "markerNumber": "11684",
+   "title": "Site of Waco Boating and Fishing Club",
+   "county": "McLennan",
+   "city": "Waco",
+   "lat": 0,
+   "lng": 0,
+   "markerText": "On January 10, 1890, a small group of prominent Waco citizens gathered at the McLennan County courthouse. According to the minutes of that first meeting, they had come together \"for the purpose of establishing a boating and fishing club.\" The organization obtained a state charter a month later. The club originally was comprised of fifty members, each of whom purchased stock in the new venture. Tom Padgitt was elected first president of the club, Otis W. David served as secretary, and W. W. Seley was elected treasurer. Members of the club immediately began looking for property on which to establish their headquarters. They soon purchased 50 acres of land five miles west of the city and just north of the road leading from Waco to Crawford for $2,000. In March 1890, the board authorized construction of a dam and proper development of a lake. An artesian well was drilled in 1892, and the lake was stocked with fish. Members of the club voted to name the site \"Fountain Lake\" and built a boat house on the east shore of the lake. Reports of club activities regularly appeared in a local society newsletter called Artesia. By the turn of the 20th century, the organization was commonly known as the \"Fish Pond Club\" and the term \"Fish Pond\" soon replaced the earlier adopted \"Fountain Lake.\" The club's facilities became a fashionable social gathering place and were used by members and non-members alike. Soon the road leading to the site was named Fish Pond Road and the surrounding area gradually took on the popular name, as well. The nearby Ridgewood Country Club purchased the property in 1985, and the Waco Boating and Fishing Club officially dissolved in 1988. At the beginning of the 21st century the old fish pond site became part of a new residential development. (2000)",
+   "markerDate": "2000",
+   "subjectCodes": [
+    "fraternal organizations"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 10512,
+   "markerNumber": "11727",
+   "title": "Little River-Wilson Valley Cemetery",
+   "county": "Bell",
+   "city": "Little River",
+   "lat": 30.975547,
+   "lng": -97.371306,
+   "markerText": "Wilson Valley community originally consisted of the seven Wilson brothers, their wives and children, and the Huckabee and Thornton families. They came from Mississippi in 1867 to escape Civil War devastation. According to family tradition, Easter Cobb Wilson, family matriarch, expressed a desire to be buried on a certain hillside. Her son Calvin Wilson designated a plot on that hill to be a family cemetery. In 1869, William J. R. Wilson, 3-year-old son of Ben and Edna Wilson, became the first to be interred at this site. Several others had been buried by 1877 when Easter Cobb Wilson died at age 81. In 1893, Bartlett and Avie McGregor Marks Huckabee deeded 3.27 acres of land, including the family plot, to the trustees of the Wilson Valley Cemetery Association. Wilson Valley, which had become a thriving area, declined when the railroad went through Little River, and gradually the two communities merged. Graves in the cemetery reflect a high infant-child mortality rate in the late 19th century and deaths due to an influenza epidemic in 1917 and 1918. A 19th century tabernacle is used for meetings and ceremonies. In 1997, over 1,300 graves were counted in the cemetery. (1997)",
+   "markerDate": "1997",
+   "subjectCodes": [
+    "cemetery"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 10514,
+   "markerNumber": "11729",
+   "title": "Miller Springs Bridge",
+   "county": "Bell",
+   "city": "Belton vicinity",
+   "lat": 0,
+   "lng": 0,
+   "markerText": "In 1872, William Miller built the first bridge over the springs favored by Tonkawa Indians. When Abe Miller bought the land in the 1920s, it was listed in county records as Miller's Springs. By 1935, a 75-foot Warren pony truss bridge, typical of many built in Texas through the 1930s, replaced several earlier bridges. When land was acquired for Belton Lake in the late 1940s, Miller Springs became a public park. Growing awareness of the area's unusual natural and biological resources led to the formation of the Miller Springs Nature Center in 1993. (1997) Incising: Polly Peaks-Elmore, Applicant",
+   "markerDate": "1997",
+   "subjectCodes": [
+    "bridges",
+    "water topics"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 10561,
+   "markerNumber": "11783",
+   "title": "Original Site of First Methodist Church of Austin",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.266348,
+   "lng": -97.743235,
+   "markerText": "Established in 1840 by the Rev. John Haynie (1786-1860), the First Methodist Church was Austin's second Protestant congregation. Services were held in temporary quarters until members erected their first meeting house in 1847 at this site, then the corner of Cedar Street and Congress Avenue. The Rev. Homer S. Thrall (1819-1894) was pastor when the small frame church was built. Thirty-five doctors from around the state met here January 17-19, 1853, to organize the Texas Medical Association. In 1854 the Methodists moved to a new brick church on the corner of Brazos and Mulberry (now 10th) Street. (1978)",
+   "markerDate": "1978",
+   "subjectCodes": [
+    "churches",
+    "Methodist (Methodist Episcopal and United Methodist) denomination"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 10839,
+   "markerNumber": "12072",
+   "title": "Thomas Hudson Barron",
+   "county": "McLennan",
+   "city": "Waco",
+   "lat": 31.554651,
+   "lng": -97.119161,
+   "markerText": "(March 8, 1796 - February 2,1874) Thomas Hudson Barron, the son of John M. and Susan Mattingly Barron, was born in Virginia. The family moved to Kentucky in 1805. Thomas joined the Kentucky Militia in November 1814 and participated in the Battle of New Orleans. He married Elizabeth Carnall in 1820 in the Arkansas Territory. They joined the Austin colony and came to Texas in 1822, staying one year before returning to Arkansas. The Barrons settled permanently in Texas in 1830 and are listed in Stephen F. Austin's 1831 Registry of Families. The home the Barrons built in Independence was later purchased by Sam Houston. Thomas and Elizabeth Barron joined the Sterling C. Robertson colony in the mid-1830s. Barron was the Ranger captain in charge of establishing Fort Fisher on the Brazos River in 1837. Elizabeth died after giving birth to twelve children. Thomas married Mary Jane Shelton in 1846 at Falls-on-the-Brazos. They became the parents of ten children and were among the earliest settlers in the area that became Waco. Barron was clerk of the first McLennan County Court in 1850 and of the first District Court in 1851. He built Waco's first steam mill in the 1850s. A street, school and creek in Waco were named for Barron, who served as McLennan County Tax Assessor in the 1860s after moving to Falls County. Barron died at Masterville (later Bruceville). He was interred at the Tom Cox Cemetery in that area. His grave was moved to this site in 1976. (1999)",
+   "markerDate": "1999",
+   "subjectCodes": [
+    "pioneers"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 10889,
+   "markerNumber": "12122",
+   "title": "Seventh & James Baptist Church",
+   "county": "McLennan",
+   "city": "Waco",
+   "lat": 31.54316,
+   "lng": -97.118962,
+   "markerText": "On June 26, 1898, a group of Waco Baptist formed a new congregation called Third Street Baptist Church. The Rev. William D. Bowen became their pastor in July 1898. bowen gave the opening sermon in the church's first building in June 1899. In 1903 the congregation relocated to this site and became known as Seventh and James Baptist Church. A larger building was erected in 1906; facilities were altered as needed. The church claims a global extended family of Baylor University students, and many of its church pastors have served as professors of religion at Baylor. Seventh and James Baptist Church continues to uphold the traditions of its founders. (1998)",
+   "markerDate": "1998",
+   "subjectCodes": [
+    "Baptist denomination",
+    "churches"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 11006,
+   "markerNumber": "12239",
+   "title": "Stanley and Emily Finch House",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.296467,
+   "lng": -97.731474,
+   "markerText": "Constructed in 1927 and 1928 for $13,500, this house has associations with several prominent Austinites. Its original owners were University of Texas civil engineering Professor Stanley P. Finch and his wife Emily (Rice). Finch's UT colleague, architect Raymond Everett, designed the house. Landscape architect C. Coatsworth Pinkney created the landscape in the 1940s. The intact colonial revival home's historic additions include bay windows designed by Hugo Kuehne in 1945 and the enclosure of the original side porch by architect J. Roy White in 1951. Recorded Texas Historic Landmark - 1999",
+   "markerDate": "1999",
+   "subjectCodes": [
+    "Colonial Revival",
+    "houses, residential buildings",
+    "design and construction",
+    "women"
+   ],
+   "isRTHL": true,
+   "size": "Medallion & Plate"
+  },
+  {
+   "id": 11013,
+   "markerNumber": "12246",
+   "title": "Texas Dental Association",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.23855,
+   "lng": -97.739059,
+   "markerText": "This professional association traces its history to 1869, when a group of dentists met in Houston and drafted a constitution and by-laws. Dr. Menard Michau of Houston was elected first president of the association, which was officially chartered by the State of Texas on May 17, 1871. Initial membership consisted of 18 dentists and 22 honorary members. The association experienced difficulties during the 1870s, and by 1880 Texas dentists saw the need for a reorganization. A new society, the Texas State Dental Association, was formed and held its first meeting in Houston on November 25, 1880. The members elected Dr. William S. Carruthers of Galveston as president. At a meeting in Austin in August 1881 members of the original and new organizations voted to merge and operate under the original group's 1871 charter. The association has held annual meetings for its members since 1880. The \"Texas Dental Journal,\" dating to 1883, is the oldest continuously published dental periodical in the western hemisphere. Headquartered in Austin since 1971, the association has been instrumental in drafting and effecting legislation regulating the practice of dentistry in Texas. (1997)",
+   "markerDate": "1997",
+   "subjectCodes": [
+    "medical topics and health professionals"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 11156,
+   "markerNumber": "12391",
+   "title": "Messer-Limmer Farmhouse",
+   "county": "Bell",
+   "city": "Temple",
+   "lat": 31.121605,
+   "lng": -97.357781,
+   "markerText": "This vernacular farmhouse was built in 1895 for Mary Margaret Messer (d. 1919) by her sons and grandsons. It was purchased in 1920 by F. A. Limmer, local landowner and citizen of the nearby community of Alligator. Features of the Cumberland plan house include board-and-batten siding and shed roof. The home and outbuildings are rare surviving examples of the type of farm complexes once found throughout Bell County. Recorded Texas Historic Landmark - 1989",
+   "markerDate": "1989",
+   "subjectCodes": [
+    "farms"
+   ],
+   "isRTHL": true,
+   "size": "Medallion & Plate"
+  },
+  {
+   "id": 11278,
+   "markerNumber": "12517",
+   "title": "First Presbyterian Church",
+   "county": "Williamson",
+   "city": "Georgetown",
+   "lat": 30.637178,
+   "lng": -97.675937,
+   "markerText": "The Rev. William Mumford Baker presided over this congregation's organization in 1854 at the Round Rock home of Richard and Mary Agnes (Cooper) Sansom. By 1856, the church was meeting in Georgetown, where C.A.D. Clamp deeded a site (at 4th and Myrtle streets) for a sanctuary and one of the town's first schools. In 1866, following the Civil War, the membership split into separate Northern and Southern congregations. The division continued into the 1890s, when the Northern church disbanded and sold the present building to the Southern congregation. Georgetown Presbyterians have met in this building since 1873. The Northern and Southern denominations reunited in 1983 as Presbyterian Church (USA). (2004)",
+   "markerDate": "2004",
+   "subjectCodes": [
+    "eccesiastical buildings",
+    "Presbyterian denomination",
+    "churches"
+   ],
+   "isRTHL": true,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 11333,
+   "markerNumber": "12575",
+   "title": "Gulf, Colorado and Santa Fe Railway Planing Mill",
+   "county": "Bell",
+   "city": "Belton",
+   "lat": 30.996723,
+   "lng": -97.496498,
+   "markerText": "Built in 1912 at the Santa Fe rail yards in Temple, this planing mill was part of a complex of buildings that housed repair facilities for the railroad. Workers at the mill manufactured replacement parts for wooden elements of the Santa Fe's boxcars and early wooden passenger cars. Heavy timbers used in the building's construction were assembled in such a manner to handle the pounding of heavy machinery inside. In use until the late 1940s, the mill was moved to this location in 1989 to save it from demolition. Although no longer sited along the railroad route, it still serves as a reminder of the significant role the Santa Fe played in the industrial development of Bell County. (2001)",
+   "markerDate": "2001",
+   "subjectCodes": [
+    "railroad",
+    "mills - textile, fiber, gristmills, cotton gins"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 11358,
+   "markerNumber": "12600",
+   "title": "Dr. Samuel J. and Charlotte H. Jones",
+   "county": "Bell",
+   "city": "Salado",
+   "lat": 30.937071,
+   "lng": -97.532174,
+   "markerText": "Educators Samuel Jackson (1858-1918) and Charlotte Hallaran (d. 1904) Jones taught at Salado College in 1884-1885. In 1890, the Joneses opened Thomas Arnold High School in the former Salado College buildings. Charlotte died in 1904, leaving five young children, but S. J. Jones remained as head of the private school until 1913. In 1915, Gov. James E. Ferguson, a former student at Salado College, appointed Jones to the University of Texas Board of Regents. Embroiled in the governor's controversy with that board early in Ferguson's second term of office, Jones was removed from his position as a regent in 1917. He died the following year at his daughter's home in Virginia. (2001)",
+   "markerDate": "2001",
+   "subjectCodes": [
+    "educational topics",
+    "women"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 11569,
+   "markerNumber": "12829",
+   "title": "Klattenhoff House",
+   "county": "Williamson",
+   "city": "Hutto",
+   "lat": 30.508203,
+   "lng": -97.579377,
+   "markerText": "Klattenhoff House German native William Klattenhoff (1855-1928) immigrated to Texas in 1872 at age 17. His work on the International and Great Northern Railroad brought him to Hutto, where he purchased land in 1876. Upon his marriage to Alvina Plattow (1860-1958) in 1878, he built their first house on this property. The Klattenhoffs purchased more land here and in Tom Green County, where in 1905 they helped establish a school that later became the Klattenhoff Community Center. William's success as a farmer, rancher and businessman led to the construction of a second home in 1896. The homestead, which remained in the Klattenhoff family at the turn of the 21st century, is a reminder of German settlement patterns. \t\t\t\t\t(2002)",
+   "markerDate": "2002",
+   "subjectCodes": [
+    "farms",
+    "houses, residential buildings",
+    "German immigrants/immigration"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 12130,
+   "markerNumber": "13444",
+   "title": "C.C. and Mattie Hughes Cody House",
+   "county": "Williamson",
+   "city": "Georgetown",
+   "lat": 30.632934,
+   "lng": -97.674748,
+   "markerText": "Georgia native Claude Carr Cody (1854-1923) worked at Southwestern University for 37 years, serving as a mathematics professor and university administrator. He was known as the \"Grand Old Man of Southwestern.\" He wed Martha \"Mattie\" Hughes in 1883, and her father, judge and legislator Thomas P. Hughes, gave them this lot, adjacent to one he had given to another daughter, Lonetta Booty. The Codys completed their home by 1897. The Free Classic Queen Anne house features Doric columns, an octagonal corner bay and a distinctive oval window. Recorded Texas Historic Landmark - 2005",
+   "markerDate": "2005",
+   "subjectCodes": [
+    "houses, residential buildings",
+    "Queen Anne (Architectural style)",
+    "women"
+   ],
+   "isRTHL": true,
+   "size": "Medallion and 16\" X 12\" plaque"
+  },
+  {
+   "id": 12483,
+   "markerNumber": "13881",
+   "title": "Steele Store-Makemson Hotel Building",
+   "county": "Williamson",
+   "city": "Georgetown",
+   "lat": 30.636496,
+   "lng": -97.678181,
+   "markerText": "Built about 1870 by M.E. Steele on the site of an early log hotel, this is one of Georgetown's oldest commercial structures. During Steele's ownership it housed a mercantile and a bank. Emma Dickman Makemson later operated a hotel here from the early 1900s until 1924. Exhibiting influences of the Italianate style, the building features a truncated roof, corner entry, ornate frieze below the roofline, and finely crafted stonework. Recorded Texas Historic Landmark - 1988",
+   "markerDate": "1988",
+   "subjectCodes": [
+    "inns, hotels, motels",
+    "markets, merchantiles"
+   ],
+   "isRTHL": true,
+   "size": "Medallion & Plate"
+  },
+  {
+   "id": 12532,
+   "markerNumber": "13932",
+   "title": "The Governor's Mansion",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.272679,
+   "lng": -97.742896,
+   "markerText": "Official residence of the Governor of Texas. By law, each chief executive must live here during his term of office. Before the erection of this building in 1855-1856, the only official executive home had been the rough, two-story frame \"President's House\" at present Seventh and San Jacinto streets. Within these walls, many decisions of statewide import have taken place. Here in 1861, Gov. Sam Houston decided not to support the Confederacy. Also, like numerous 19th-century houses, the mansion acquired a ghost story after the nephew of Gov. Pendleton Murrah (1863-1865) committed suicide here. Built some thirty years before the pink granite capitol, this structure was first occupied by Gov. Elisha M. Pease, who selected the site and design. Pioneer architect-contractor Abner Cook supervised the construction of the stately residence, in Greek Revival style. Austin-made bricks were used, and huge pine logs were hauled from Bastrop, then adzed to form the six massive pillars with Ionic capitals. Distinguished visitors have included U.S. Presidents and heads of state from other countries. More than perhaps any other residence in Texas, the Governor's Mansion is a repository of Texas history. (1969) (Recorded Texas Historic Landmark - 1962)",
+   "markerDate": "1962",
+   "subjectCodes": [
+    "governors",
+    "houses, residential buildings",
+    "design and construction"
+   ],
+   "isRTHL": true,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 12710,
+   "markerNumber": "14153",
+   "title": "Joseph Baker",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.275047,
+   "lng": -97.728227,
+   "markerText": "Born in Maine 1804. Died in Austin, Texas, July 11, 1846. One of the founders of \"The Telegraph and Texas Register\" at San Felipe de Austin, October 10, 1835. A soldier at San Jacinto. First chief justice of Bexar County, 1836. Member of the Congress of the Republic, 1837. Erected by the State of Texas 1936",
+   "markerDate": "1936",
+   "subjectCodes": [
+    "judges",
+    "Texas Revolution, Republic of Texas",
+    "military topics"
+   ],
+   "isRTHL": false,
+   "size": "1936 Texas Centennial"
+  },
+  {
+   "id": 12731,
+   "markerNumber": "14183",
+   "title": "Corn Hill Community",
+   "county": "Williamson",
+   "city": "Jarrell",
+   "lat": 30.805402,
+   "lng": -97.614757,
+   "markerText": "Settled primarily by settlers from Texas and southern states, Corn Hill was one of the earliest communities in Williamson County. John E. King, county judge from 1858 to 1860, named it for the home he built on a hill and nearby cornfield in 1852. The dispersed agricultural community was the first stop on the stage line running from Georgetown to Fort Gates (Coryell County). A post office opened in 1855 and by the 1860s, an influx of new residents settled here. In 1878, George G. Grant established corn Hill Academy Male and Female School, built on land donated by Judge King. It thrived and in 1886 moved to a new two-story building with four classrooms, a bell tower and an auditorium, which provided meeting space for local church services. By 1893, a public school opened as part of Corn Hill Independent School District. By the end of the 19th century, Corn Hill had a saddle club, several churches, two locl cotton gins, Corn Hill College, fraternal lodges and school organizations. By the early 1900s, community residents became active in Populist politics and in the Farmers' Union. Industrial activity of the early 1900s included the Corn Hill and Gravis Telephone Company and a waterworks; a planned interurban to Bartlett never materialized. The settlement began to decline in 1909 when the Bartlett Western Railway bypassed two miles to the north, establishing the town of Jarrell. Steam engines helped move homes and businesses to the new townsite, and other moved to the village of New Corn Hill, but many residents chose to remain here. Today, the dispersed Corn Hill settlement survives as a reminder of the area's early agrarian heritage. (2007)",
+   "markerDate": "2007",
+   "subjectCodes": [
+    "courthouses"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 12748,
+   "markerNumber": "14209",
+   "title": "The Jeremiah Hamilton House",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.27129,
+   "lng": -97.735247,
+   "markerText": "Born about 1839 in Tennessee, Jeremiah Hamilton was one of nine Black representatives in the 12th Texas Legislature, 1869-71. He bought this lot on Waller Creek in 1871 and began building this oddly shaped stone structure to house his grocery store. Italian-born Michael Paggi owned the property from 1873 to 1881. He was involved in several unusual business ventures, including the manufacture of ice. Recorded Texas Historic Landmark - 1978",
+   "markerDate": "1978",
+   "subjectCodes": [
+    "African American topics",
+    "state official",
+    "houses",
+    "commercial buildings",
+    "businesses"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion and plate"
+  },
+  {
+   "id": 12773,
+   "markerNumber": "14242",
+   "title": "J. Frank Dobie House",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.289373,
+   "lng": -97.732522,
+   "markerText": "Built in 1925, this house was occupied by eminent Texas author, educator, and folklorist J. Frank Dobie (1868-1964) and his wife Bertha from 1926 until their deaths. Dobie, who taught a popular course at the University of Texas on the life and literature of the Southwest, wrote many of his books here, and often mentioned his home “on Waller Creek” in the books’ prefaces. Among the friends who visited here were Carl Sandberg, Walter P. Webb, and Roy Bedichek. Exhibiting elements of the Colonial Revival style, the house includes a distinctive chimney on the front façade. Recorded Texas Historical Landmark -- 1991",
+   "markerDate": "1991",
+   "subjectCodes": [
+    "educational topics",
+    "houses, residential buildings",
+    "writers and poets"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion and plate"
+  },
+  {
+   "id": 12832,
+   "markerNumber": "14322",
+   "title": "The Gault Homestead",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.442271,
+   "lng": -97.679735,
+   "markerText": "Included as part of a 320-acre land grant awarded to J. P. Whelin in payment for his service to the Republic of Texas Army, this property has had a long and varied history. Soon after he was granted the land, Whelin sold it to Nathaniel C. Raymond, who in turn sold it to John M. Gault two years later. Gault built a log cabin on the Whelin grant in the 1850s, and he and his family established a farm. In 1855 they purchased adjoining land from Captain Nelson Merrill and soon thereafter built a larger home on that tract of land. Gault died about 1865 and was buried in Merrilltown Cemetery. The homestead property remained in his family until 1892, when it was sold to William and Edna Graves. They maintained the Gault homestead as tenant property for a number of years, during which the original cabin was enlarged with a board-and-batten addition. R. C. Cox acquired the property in 1929, and his family lived in the cabin through the following decade. After a succession of owners, the Gault homestead became part of a modern housing development in the 1980s. It remains as a reminder of the Merrilltown community and of the county's early rural heritage. (1990)",
+   "markerDate": "1990",
+   "subjectCodes": [
+    "farms"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 12848,
+   "markerNumber": "14345",
+   "title": "E.H. Carrington Grocery Store and Lyons Hall",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.266672,
+   "lng": -97.737434,
+   "markerText": "Built in 1872, this commercial structure housed the successful grocery business of former slave Edward H. Carrington. After his death in 1917, the business was continued by his son-in-law Louis D. Lyons, a trustee of Samuel Huston College, who converted the second floor into a meeting room that became the site of many functions of the Black community. The E.H. Carrington store building features an arcaded facade with Italianate influences.   Recorded Texas Historic Landmark - 1983",
+   "markerDate": "1983",
+   "subjectCodes": [
+    "African American topics",
+    "commercial buildings",
+    "Italianate (architectural style)",
+    "design and construction"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion and plate"
+  },
+  {
+   "id": 12871,
+   "markerNumber": "14389",
+   "title": "Congress Avenue",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.263278,
+   "lng": -97.744831,
+   "markerText": "In his original 1839 plan for the Capital City, Edwin Waller, signer of the Texas Declaration of Independence and Austin's first mayor, designed Congress Avenue as Austin's most prominent street. Known for many years as \"The Avenue\", the street has been the scene of many important social, political, patriotic, religious, and military events. Early structures along Congress Avenue included government buildings, hotels, saloons, retail stores, and restaurants. By the late 1840s it was a well-established business district. The mid-1870s saw the introduction of gaslight illumination and mule-drawn streetcars, as well as construction of a new Travis County Courthouse at Eleventh Street. The present Capitol was built in 1883-88. Bricks replaced the original dirt street in 1910, and trolley cars operated on the avenue until 1940. Economic progress and modernization altered the avenue's appearance over the years, but it remains the city's most historic and identifiable street. In recognition of its architectural and historical significance, Congress Avenue from First Street to the Capitol was listed in the National Register of Historic Places in 1979. (1989)",
+   "markerDate": "1989",
+   "subjectCodes": [
+    "roads"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 12873,
+   "markerNumber": "14391",
+   "title": "Colonel Stephen Heard Darden",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.265296,
+   "lng": -97.727497,
+   "markerText": "Army of Texas, 1836. State senator 1861-1862. Commissioned Colonel C.S.A., 1863. Member of the Confederate Congress, 1864. State comptroller, 1874-1881. Born in Mississippi, November 18, 1816. Died in Wharton, Texas, May 16, 1902. His wife CATHERINE MAYS DARDEN, born February 13, 1836. Died August 19, 1912. Erected by the State of Texas - 1936",
+   "markerDate": "1936",
+   "subjectCodes": [
+    "Texas Revolution, Republic of Texas",
+    "military topics"
+   ],
+   "isRTHL": false,
+   "size": "1936 Texas Centennial"
+  },
+  {
+   "id": 12921,
+   "markerNumber": "14448",
+   "title": "McNeal Home",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.271595,
+   "lng": -97.749144,
+   "markerText": "RTHL medallion only",
+   "markerDate": "1962",
+   "subjectCodes": [
+    "houses, residential buildings"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion only"
+  },
+  {
+   "id": 12945,
+   "markerNumber": "14481",
+   "title": "Williamson County Jail",
+   "county": "Williamson",
+   "city": "Georgetown",
+   "lat": 30.640205,
+   "lng": -97.677485,
+   "markerText": "In continuous use since 1888. Native limestone. Cost $22,000. Replaced 1848 frame jail at grand jury request. Financed without a bond issue. French Bastille styling, unchanged at remodeling, at cost of $40,000, in 1934. Recorded Texas Historic Landmark - 1965.",
+   "markerDate": "1965",
+   "subjectCodes": [],
+   "isRTHL": true,
+   "size": ""
+  },
+  {
+   "id": 13026,
+   "markerNumber": "14592",
+   "title": "Wells-LaRue House",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.309712,
+   "lng": -97.726795,
+   "markerText": "Built about 1850 by famed pioneer architect Abner Cook, for Waymen Wells, who lived 10 miles north, but needed town house for business and pleasure trips. His grandchildren, the LaRues, moved in to attend school sessions. Third generation now lives in the home.",
+   "markerDate": "1963",
+   "subjectCodes": [
+    "houses, residential buildings"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion and plate"
+  },
+  {
+   "id": 13175,
+   "markerNumber": "14787",
+   "title": "Ebenezer (Third) Baptist Church",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.268855,
+   "lng": -97.73073,
+   "markerText": "The Ebenezer (Third) Baptist Church was organized by Reverend C. Ward, February 1875, in the home of Mrs. Elisa Hawkins at 1104 East Tenth Street. The first frame structure was built at the corner of Catalpa and Curve streets. The membership outgrew this church, and a brick sanctuary with stained glass windows was erected at the corner of East Tenth and San Marcos streets in 1885. In 1915, the stucco tabernacle was erected. The present Sanctuary and Education Complex was erected in 1950-1955. The limestone and brick structure is of Gothic design and the tower houses the bell from the first brick church. Also, a parsonage was built at 1203 Cotton Street.",
+   "markerDate": "1976",
+   "subjectCodes": [
+    "African American topics",
+    "Baptist denomination",
+    "churches"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 13187,
+   "markerNumber": "14809",
+   "title": "Edward Ferdinant Forsgard",
+   "county": "McLennan",
+   "city": "Waco",
+   "lat": 31.533501,
+   "lng": -97.107676,
+   "markerText": "Edward Ferdinant Forsgard was born to Swedish immigrants Samuel Johan Forsgard and Mary Johnson in 1870 at their home at 115 Bridge Street in Waco. Edward, known as \"Fuzzy,\" was the only one of the Forsgard's six children to survive into adulthood; his parents and siblings are buried at Waco's First Street Cemetery. Edward followed in his father's footsteps, touring the country as a marksman and trapshooter by age eleven. He attended Baylor University, and, in 1896, married Annie Marie Weaver, who had come to the United States from England with her parents in 1880. Edward and Annie had six children and built a home at 1122 North 4th Street in Waco in 1908; Edward's widowed father lived behind their home in his own small house. Edward worked with his father, first at the family's bakery, restaurant and supply store on Bridge Street, and then at his father's Ambold's Sporting Goods Store. Edward also worked in a cotton yard as a cotton classer. At the outset of World War I, he became a shooting instructor for the military, working at Rich Field in Waco. He also later served as a special Texas Ranger and as a game and fish warden for McLennan County. In addition to his skill with a gun, another trait Edward shared with his father was his love of inventing, patenting an automatic dishwasher for restaurants, as well as a package tie, and a chemical and sawdust floor sweep design to absorb dirt and moisture. Internationally, Edward was known as an expert target shooter. He had competed in the sport for 50 years and held the world title in 1908. At this death in 1941, Edward was remembered locally not only as a trapshooter, but also as a patriot, friend and father. (2003)",
+   "markerDate": "2003",
+   "subjectCodes": [
+    "Swedish immigrants/immigration",
+    "sports topics"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 13220,
+   "markerNumber": "14858",
+   "title": "West-Bremond Cottage",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.270188,
+   "lng": -97.748105,
+   "markerText": "Built as servants’ quarters about 1872, this “shotgun” house stood at 604 San Antonio near the home of Charles S. West (1829-1885), lawyer and Texas Supreme Court justice. In 1885 banker Eugene Bremond (1832-1910) acquired it. Emma Grant West (1865-1952), whose husband Robert died in 1904, bought the cottage in 1906 and moved it here for rent property. She sold it in 1925 to a teacher, Miss Katie Gannaway (1890-1967). It was purchased in 1973 and restored by attorney Byron Lockhart. Recorded Texas Historic Landmark - 1976",
+   "markerDate": "1976",
+   "subjectCodes": [
+    "houses, residential buildings"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion and plate"
+  },
+  {
+   "id": 13261,
+   "markerNumber": "14910",
+   "title": "Millett Opera House",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.270702,
+   "lng": -97.740942,
+   "markerText": "Lumber dealer Charles F. Millett’s 1878 Opera House became a cultural center for Austin, The theater had 800 moveable seats, plus boxes. Operas and dramatic performances featured such noted actors as Edwin Booth, Joseph Jefferson, Sir Henry Irving, and Otis Skinner. On March 10, 1899, Democratic Presidential nominee William Jennings Bryan gave a speech here. Other activities included Legislative sessions, balls, inaugurations, songfests, political conventions, commencements, and skating. The two-story limestone building was altered in 1896 and 1911 to include a third story addition and a two-story Classical portico. Recorded Texas Historic Landmark – 1965",
+   "markerDate": "1965",
+   "subjectCodes": [
+    "opera houses and theaters",
+    "design and construction",
+    "recreation",
+    "state government"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion and plate"
+  },
+  {
+   "id": 13302,
+   "markerNumber": "14977",
+   "title": "Frances & Benjamin McCulloch",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.265374,
+   "lng": -97.727234,
+   "markerText": "Here Rest Frances Lenoir McCulloch and her son Benjamin McCulloch Two of the sons of Alexander and Frances Lenoir McCulloch * Benjamin and Henry Eustace * were Brigadier Generals in the Confederate Army Frances Lenoir McCulloch was born April 11 * 1780 Died in Ellis County * Texas * May 10, 1866 Benjamin McCulloch was born in Tennessee November 11 * 1811 * * Private in the Battle of San Jacinto April 21 * 1836 * * Killed in the Battle of Elk Horn * Arkansas * March 7 * 1862 While a Brigadier General in the Confederate Army Erected by the State of Texas 1936",
+   "markerDate": "1936",
+   "subjectCodes": [
+    "Texas Revolution, Republic of Texas",
+    "pioneers",
+    "military topics"
+   ],
+   "isRTHL": false,
+   "size": "1936 Texas Centennial"
+  },
+  {
+   "id": 13308,
+   "markerNumber": "14990",
+   "title": "In Memory of George Washington Glasscock, Sr.",
+   "county": "Williamson",
+   "city": "Georgetown",
+   "lat": 30.636878,
+   "lng": -97.677475,
+   "markerText": "For whom the city of Georgetown and the county of Glasscock, Texas are named. Born in Kentucky April 11, 1810. Participated in the Black Hawk War, 1832. Came to Texas in 1834 and fought for its independence from Mexico 1835-1836. Surveyor, soldier, legislator, helped to organize Williamson County and donated 172 acres of land for the county site. Died at Austin, Texas February 28, 1868. This marker was placed by the State of Texas 1936",
+   "markerDate": "1936",
+   "subjectCodes": [
+    "military topics",
+    "Texas Revolution",
+    "state official, counties"
+   ],
+   "isRTHL": false,
+   "size": "1936 Texas Centennial - historical marker (bronze tablet)"
+  },
+  {
+   "id": 13341,
+   "markerNumber": "15037",
+   "title": "Robert S. Stanley House",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.246512,
+   "lng": -97.753131,
+   "markerText": "Travis County native Robert S. Stanley (1863-1941), an African-American stonemason and laborer, built this home for his wife Francis and their children in 1895. He later built a stone building on West Mary Street (1927) which his second wife Jennie operated as a general store. The front-gabled vernacular house exhibits Stanley's craftmanship in its rusticate load-bearing and veneer limestone constructino, two-foot thick stone half-basement, and longleaf pine framing and floors. The house remained in the Stanley family for more than a century. Stanley is buried at Austin's Evergreen Cemetery.Recorded Texas Historic Landmark-2001",
+   "markerDate": "2001",
+   "subjectCodes": [
+    "African American topics",
+    "vernacular (Architectural term)",
+    "houses, residential buildings"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion and 16\" x 12\" plaque"
+  },
+  {
+   "id": 13420,
+   "markerNumber": "15143",
+   "title": "John Ireland",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.26525,
+   "lng": -97.72701,
+   "markerText": "Born in Hart County, Kentucky January 1, 1827 Died in San Antonio, Texas March 5, 1896 [Back of headstone] An officer in the Confederate Army Senator in the State Legislature Associate Justice of the Supreme Court of Texas Governor of Texas January 16, 1883 to January 18, 1887 Erected by the State of Texas 1936",
+   "markerDate": "1936",
+   "subjectCodes": [
+    "governors",
+    "state official",
+    "Civil War"
+   ],
+   "isRTHL": false,
+   "size": "1936 Texas Centennial"
+  },
+  {
+   "id": 13429,
+   "markerNumber": "15158",
+   "title": "Susanna W. Dickinson",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.2754,
+   "lng": -97.72666,
+   "markerText": "(1814-1883). Almaron and Susanna Dickinson settled in Gonzales about 1835 as members of DeWitt's Colony. Present with her daughter, Angelina, when the Alamo fell in March 1836, Susanna witnessed the deaths of Almaron and the other Texans. She was released by Mexican General Santa Anna after the battle, and with an escort made her way to Sam Houston with news of the Alamo. She married Joseph Hannig in 1857 and lived in Austin until her death. Recorded-1993.",
+   "markerDate": "1993",
+   "subjectCodes": [
+    "Texas Revolution, Republic of Texas",
+    "women, women's history topics",
+    "military topics"
+   ],
+   "isRTHL": false,
+   "size": "grave marker"
+  },
+  {
+   "id": 13456,
+   "markerNumber": "15196",
+   "title": "Philquist-Wood House",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.302626,
+   "lng": -97.729554,
+   "markerText": "Sweden native Sven Axel Philquist, local district clerk and later clerk of the Texas Supreme Court, hired Swedish builder F. Oscar Blomquist to build this family home in 1912. Following several subsequent owners, grocer Sam Wood purchased the house in 1943; it remained in the Wood family for more than 50 years. Today, the home exhibits its original detailing as a transitional hybrid, with influences of the Queen Anne, Colonial Revival and Craftsman styles. The interior features an inglenook, and the exterior details include paired box columns, tripartite window groupings, dormers and gables. Recorded Texas Historic Landmark - 2003",
+   "markerDate": "2003",
+   "subjectCodes": [
+    "Colonial Revival",
+    "houses, residential buildings",
+    "Queen Anne (Architectural style)"
+   ],
+   "isRTHL": true,
+   "size": "RTHL medallion and plaque"
+  },
+  {
+   "id": 13556,
+   "markerNumber": "15330",
+   "title": "Swedish Central Methodist Church",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.276158,
+   "lng": -97.741108,
+   "markerText": "Organized in 1873 by the Rev. Carl Charnquist, the Swedish Methodist Church built a sanctuary at Red River and 15th street. Led by the Rev. O.E. Olander, the congregation moved to this site in 1898 and occupied buildings of disbanded Central Methodist Church. The fellowship added 'Central' to its name and later dropped 'Swedish'. Church property, then across from the Capitol grounds at Colorado and 13th street, was sold in 1956 for expansion of state offices. Renamed Memorial Methodist Church, the historic congregation moved to northeast Austin. (1975)",
+   "markerDate": "1975",
+   "subjectCodes": [
+    "Methodist denomination",
+    "Swedish immigrants/immigration",
+    "churches"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 13612,
+   "markerNumber": "15413",
+   "title": "Desegregation of Texas Public Schools",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.269686,
+   "lng": -97.724303,
+   "markerText": "The State of Texas instituted a public school system for African-American students during Reconstruction. This segregation of students was further established through the 1896 United States Supreme Court decision in Plessy v. Ferguson, which established the legality of the doctrine, \"separate but equal.\" Desegragation of schools began after the U.S. Supreme Court ruled in Brown v. Board of Education of Topeka in 1954 that segregated schools were unconstitutional. By 1957, more than 100 Texas school districts had made progress toward desegragation. Throughout the proceeding decades, school districts integrated; in some cases, the Supereme Court provided desegregation plans. While many schools desegregated without incident, others experienced a difficult transition.The method of desegregation varied from district to district. Some integrated one grade per year; others gave students \"freedom of choice,\" allowing them to select whigh high school they would attend. In the end, the movememnt led to the closing of most African-American schools across the state, including L.C. Anderson High School, a noted institution in Austin. Many of the former school buildings were demolished or left idle, while some were used for various community or educational prgroams, like Head Start. The closure of these schools affected many residents, since the institutions were often centers of pride for African-American communities. Many of the students from the schools became leaders in their communities, and on state and national levels.Integration was a slow and often difficult process in Texas, as well as throughout the rest of the United States. Today, desegregation is remembered in Texas as a pivotal event in the Civil Rights Movemement, and as the end of the era for African-American schools. (2008)",
+   "markerDate": "2008",
+   "subjectCodes": [
+    "educational topics",
+    "African American topics"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 14054,
+   "markerNumber": "16017",
+   "title": "George W. Carroll Science Hall",
+   "county": "McLennan",
+   "city": "Waco",
+   "lat": 31.546248,
+   "lng": -97.120385,
+   "markerText": "GEORGE W. CARROLL SCIENCE HALL CARROLL SCIENCE HALL WAS NAMED IN HONOR OF BUSINESSMAN AND PHILANTHROPIST GEORGE WASHINGTON CARROLL, WHO GAVE TWO SEPARATE DONATIONS OF $60,000 AND $15,000 TO BAYLOR UNIVERSITY FOR THE CONSTRUCTION OF A HALL DEVOTED TO SCIENCE. IN 1902, THE UNIVERSITY’S SENIOR CLASS “AFFECTIONATELY DEDICATED” THE YEARBOOK TO CARROLL, IN RECOGNITION OF HIS DONATION. COMPLETED IN 1903, CARROLL SCIENCE HALL BOASTED THREE FLOORS AND A BASEMENT CONTAINING LABORATORIES AND CLASSROOMS FOR THE INSTRUCTION OF CHEMISTRY, PHYSICS, BIOLOGY, GEOLOGY AND ASTRONOMY, AS WELL AS ADMINISTRATIVE OFFICES. THE BASEMENT SERVED AS ONE OF THE MANY HOMES OF BAYLOR’S MUSEUM. DESIGNED BY ARCHITECT S. WEMYSS SMITH, THE BEAUX ARTS STYLE BUILDING FEATURES LARGE RUSTICATED LIMESTONE BLOCKS WITH BEADED MORTAR JOINTS IN THE FIRST STORY AND BASEMENT, WHILE THE UPPER BRICK FLOORS MINGLE WITH LIMESTONE STRING COURSES, LINTELS AND SILLS. THE FRONT ENTRANCE INCLUDES FOUR IONIC COLUMNS ABOVE AN ENTRY PAVILION, WHILE THE REAR OF THE RECTANGULAR PLAN BUILDING HAS A PROMINENT ROUNDED EXTENSION. AS BAYLOR EXPANDED DURING THE TWENTIETH CENTURY, CONSTRUCTION OF THE SID RICHARDSON SCIENCE BUILDING AND THE GOEBEL SCIENCE BUILDING IN THE 1960s LEFT CARROLL SCIENCE HALL WITHOUT ITS ORIGINAL PURPOSE. HOWEVER, A SERIES OF MAJOR INTERIOR RENOVATIONS BEGUN IN THE MID-1970s AND COMPLETED IN THE EARLY 1980s CHANGED LABORATORIES AND OTHER OUTDATED FACILITIES INTO TRADITIONAL CLASSROOMS, WHILE ADDING ESSENTIAL NECESSITIES SUCH AS CENTRAL HEAT AND AIR CONDITIONING. ALTHOUGH THE BUILDING IS NOW THE HOME OF THE UNIVERSITY’S DEPARTMENT OF ENGLISH, IT RETAINS ITS ORIGINAL NAME, FIRMLY ROOTING IT IN THE HISTORY AND TRADITIONS OF BAYLOR UNIVERSITY. RECORDED TEXAS HISTORIC LANDMARK – 2009",
+   "markerDate": "2009",
+   "subjectCodes": [
+    "ecucational buildings",
+    "educational topics"
+   ],
+   "isRTHL": true,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 14109,
+   "markerNumber": "16099",
+   "title": "Gen. Alexander Watkins Terrell",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.265295,
+   "lng": -97.727044,
+   "markerText": "General Alexander Watkins Terrell, born in Patrick County, Va., November 23, 1827. Came to Texas in 1852. Died while visiting in Mineral Wells, September 9, 1912. District Judge, Second Judicial District, 1857-1863, Lieutenant Colonel, Thirty-Fourth Texas Regiment, C.S.A. Until 1865 when he was promoted to Brigadier General. Senator, Texas Legislature, 1876-1907, U.S. Minister to Turkey, 1893-1896.",
+   "markerDate": "1936",
+   "subjectCodes": [],
+   "isRTHL": false,
+   "size": ""
+  },
+  {
+   "id": 14131,
+   "markerNumber": "16142",
+   "title": "Old Courtroom of the Supreme Court of Texas",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.274927,
+   "lng": -97.740401,
+   "markerText": "In this room, the Texas Supreme Court, highest civil appelate court of the state, sat for 70 years, until removal in 1959 to the new Supreme Court Building. The court, which dates from the Republic of Texas, consisted of a Chief Justice and varying numbers of associate justices until 1945, when the number of associates was set at eight. Before 1945 the court was at times assisted by judges of the Commission of Appeals, who sometimes sat here with the court itself. The bench was installed in 1889, at the time that the court began to sit here. From it renowned Texas judges have heard oral argument by eminent lawyers in the most important civil cases decided during this period of greatest development in the state. The Latin words at the center of the bench read, \"As God was to our forefathers, so may he be to us.\" For many years prior to 1966 the walls of the room were largely covered with portraits of past justices of the court, including, just above the bench, those of the first three to sit after Texas joined the Union in 1845. Today portraits of most of the past associate justices have been removed. The room is now a permanent committee hearing room of the Texas House of Representatives.   (1968)",
+   "markerDate": "1968",
+   "subjectCodes": [
+    "state government",
+    "law",
+    "state officials",
+    "design and construction"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 14144,
+   "markerNumber": "16162",
+   "title": "Hillcrest Cemetery",
+   "county": "Bell",
+   "city": "Temple",
+   "lat": 31.114471,
+   "lng": -97.335422,
+   "markerText": "Previously known as Williamson Branch Graveyard and Temple City Cemetery, Hillcrest Cemetery began as a rural family graveyard before eventually becoming a large, urban burial ground. Before the establishment of Temple, area residents began to use this property for interments in the 1870s. In 1884, John H. And Mary E. Williams, who owned the land, deeded acreage for use as a public cemetery.\r\n\r\nIn 1893, the Temple Cemetery Company formed, acting as a cemetery association. The company was aided in maintaining the burial ground by the City of Temple and Bell County, which played major roles in building the property's infrastructure. The burial ground expanded between 1884 and 1921, when it was annexed into the city. Over the years, the association developed further sections of the property and made other additions, including Memorial Garden, which opened in 1962.\r\n\r\nApproximately 18,000 individuals are interred in Hillcrest Cemetery, representing diverse nationalities, ethnic groups, religions and cultures. Languages on the gravestones include Chinese, Czech, English, French, German, Italian, Korean, Norwegian and Vietnamese. Noted individuals buried in Hillcrest include persons of local, statewide and national significance. Cemetery features include monuments and statuary, Woodmen of the World and other fraternal gravestones, zinc gravestones, false crypts, obelisks, vertical stones, curbing, and interior fencing. Today, Hillcrest Cemetery continues to serve the city of Temple as a final resting place and as a record of the area's rich history.\r\n\r\nHistoric Texas Cemetery - 2008",
+   "markerDate": "2009",
+   "subjectCodes": [
+    "cemetery",
+    "cities and towns",
+    "landscape architecture",
+    "languages"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 14548,
+   "markerNumber": "16803",
+   "title": "Matsen House",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.28251,
+   "lng": -97.748799,
+   "markerText": "In 1953, distinguished professor of chemistry and physics at the University of Texas at Austin, Frederick Albert Matsen (1913-2006), and his wife, Cecelia Christina (Kirkegaard) Matsen (1910-2006), built this home. The couple worked with Austin architects Carlton Brush and Joseph Buffler, influenced by Frank Lloyd wright, who was active in Racine, Wisconsin, native town of the Matsens. The two-story house is built of limestone walls and cedar shakes on a wood frame. It exhibits mid-century modern and international elements, including horizontal emphasis in the flat roof and windows, use of natural light, and a floor plan incorporating the slope of the site.",
+   "markerDate": "2011",
+   "subjectCodes": [
+    "houses, residential buildings"
+   ],
+   "isRTHL": true,
+   "size": "Medallion & 12\" x 16\" plate"
+  },
+  {
+   "id": 14664,
+   "markerNumber": "16954",
+   "title": "Zeta Tau Alpha House",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.292843,
+   "lng": -97.742459,
+   "markerText": "The Kappa Chapter of Zeta Tau Alpha women’s fraternity was chartered at the University of Texas in 1906. After residing in houses in several locations near the University campus during its early years, the chapter purchased this Nueces Street lot in 1927 and made plans to build a new chapter house at the site. The Austin architectural firm of Page Southerland designed the structure, and when additional adjoining lots were purchased construction finally occurred in 1939. The two-story Neoclassical-style brick house has a symmetrical main façade, square columns, double-hung windows, entrance with broken pediment, and roof-line balustrade. Additions to the rear of the house were made in 1965 and 1975. Recorded Texas Historic Landmark – 2011",
+   "markerDate": "2011",
+   "subjectCodes": [
+    "Neoclassical [architectural style]",
+    "clubs/organizations",
+    "women, women's history topics"
+   ],
+   "isRTHL": true,
+   "size": "18\" x 28\""
+  },
+  {
+   "id": 14807,
+   "markerNumber": "17182",
+   "title": "Westgate Tower",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.274167,
+   "lng": -97.742632,
+   "markerText": "In 1962, the internationally-acclaimed architect Edward Durell Stone (1902-1978) of New York City and local firm Fehr & Granger designed the Westgate Tower, named for its location adjoining the west edge of the Texas State Capitol grounds. Designed for the Lumbermen's Investment Corporation of Austin, the Westgate Tower was the tallest building constructed in Austin during the 1960s at 261 feet in height. Under the leadership of Julian H. Zimmerman and in coordination with Stone, Austin's first residential high-rise opened in 1965 with apartments, parking, restaurant and social club. The mixed-use building is of poured-in-place, monolithic reinforced concrete clad in brown brick sourced from the locally-based Butler Brick Company, with full-length windows and individual balconettes between brick-faced columns. Decorative masonry solar screens, a distinctive characteristic of Stone's mid- twentieth-century Modern architecture, allow light to enter the parking garage and top two floors while offering privacy and shade from the Texas sun. The 26-story tower is arranged around a central core of elevators and a staircase, and all residential units open to expansive views of the Capitol grounds and city of Austin, a key element of Stone's design. Intended to serve as a prototype for other apartments and office Towers in Austin, the Westgate Tower has historically been home to many State Representatives and Senators, state employees, political activists and lobbyists, and local business leaders. Combining residential and commercial space, the Westgate Tower significantly contributed to the urban planning and development of downtown Austin. Recorded Texas Historic Landmark - 2012",
+   "markerDate": "2012",
+   "subjectCodes": [
+    "architects, residential buildings, New Formalism architectural style, community development"
+   ],
+   "isRTHL": true,
+   "size": "27\" x 42\" with post"
+  },
+  {
+   "id": 15037,
+   "markerNumber": "17479",
+   "title": "South Belton Cemetery",
+   "county": "Bell",
+   "city": "Belton",
+   "lat": 31.051043,
+   "lng": -97.463103,
+   "markerText": "SOUTH BELTON CEMETERY ESTABLISHED 1851 HISTORIC TEXAS CEMETERY – 2003",
+   "markerDate": "2013",
+   "subjectCodes": [
+    "cemetery"
+   ],
+   "isRTHL": false,
+   "size": "HTC Medallion and Name & Date Plaque without post"
+  },
+  {
+   "id": 15067,
+   "markerNumber": "17512",
+   "title": "Brown Building",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.27007,
+   "lng": -97.74366,
+   "markerText": "BROWN BUILDING In 1938, architects C.H. Page and Son designed the Brown Building for legendary businessman Herman Brown on a prominent site at the southwest corner of Colorado and eighth streets in downtown Austin. Built of concrete reinforced with structural steel, the eight-story office tower exemplified the tenets of Art Moderne design. Its flush piers, recessed metal spandrels, vertically arranged casement windows and stylized granite entry provide the hallmarks of the style. Additions of a ninth story in 1949 and a tenth story in 1952 matched the scale and materials of the original composition. Surviving virtually unchanged since this period of significance, the building retains a high degree of its historic integrity. The building’s interior also reflects the Art Moderne design with panels of pink tinged marble gracing the ceiling and walls, contrasting with a pink, green and yellow terrazzo floor. Elaborate geometric aluminum and glass lighting panels sweep from the center of the ceiling to the top of each elevator. The building housed many significant companies throughout the 20th century, including construction firm Brown & Root, offices for U.S. congressman and future president Lyndon Baines Johnson, and the Texas Broadcasting Corporation, which operated from the building for many years with humorist Cactus Pryor and future governor John Connally. The building was listed in the National Register of Historic Places in 1994. In the early 2000s, the building was converted to include high-end lofts. RECORDED TEXAS HISTORIC LANDMARK – 2013",
+   "markerDate": "2013",
+   "subjectCodes": [
+    "commercial buildings"
+   ],
+   "isRTHL": true,
+   "size": "27\" x 42\" without post"
+  },
+  {
+   "id": 15068,
+   "markerNumber": "17513",
+   "title": "McClendon-Price House",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.281152,
+   "lng": -97.748337,
+   "markerText": "In 1906, local architect Charles H. Page designed this house for Judge James Wooten McClendon and his wife, Annie (Watt), whose father donated the site as their wedding gift. McClendon was an attorney and judge, serving as Chief Justice of the Court of Civil Appeals for 26 years. Judges Thomas B. Greenwood and Charles G. Krueger were tenants here before the McClendons sold the home in 1944. University of Texas head football coach and administrator Ed Price, his wife, Betty (Rugeley) and their family acquired the property in 1960. The 2 ½-story American Foursquare house with buff brick exterior incorporates elements of Prairie, Craftsman and Eclectic architectural styles.",
+   "markerDate": "2013",
+   "subjectCodes": [
+    "houses, residential buildings",
+    "Prairie, Craftsman, Eclectic (architectural styles)"
+   ],
+   "isRTHL": true,
+   "size": "18\" x 28\" without post"
+  },
+  {
+   "id": 15200,
+   "markerNumber": "17670",
+   "title": "Knob Creek Lodge No. 401, A.F. & A.M.",
+   "county": "Bell",
+   "city": "Temple",
+   "lat": 31.096637,
+   "lng": -97.340279,
+   "markerText": "Since June 4, 1875, the Knob Creek Lodge No. 401 Ancient Free & Accepted Masons has met continuously in Bell County and remained true to its ideals of fraternity, charitable works and public service. Masonic District 11 Deputy Grand Master Archibald Johnson Rose of Salado assisted in the establishment of Little River Lodge No. 401, the predecessor to Knob Creek Lodge, at Little River Academy, an agricultural community eight miles south of the Temple area. In December 1876, the Brethren began meeting in the gin owned by Early Greathouse, Sr., son of charter member John Greathouse. Following the progress of freemasonry statewide, Little River Lodge remained committed to education. In 1879, they arranged to build a second story to the Pleasant Valley Schoolhouse and used the space as a new meeting place. At the same time, the lodge changed its name to Knob Creek Lodge No. 401, the name of the creek running near the school. As the lodge membership rose and the area began to grow, the Knob Creek Lodge moved to Temple in 1885, where it occupied the second story of the Hurley building. Following a fire in their third building, the brethren built a lodge hall that opened in 1906 at 16 East Central Ave. Where they continue to meet after more than 100 years. By 1960, the lodge had grown to more than 700 members from all strata of Bell County residents and accrued a legacy of public service. Over the years, lodge members supported churches, businesses, education, government and social programs in Bell County. Throughout its history, Knob Creek Lodge No. 401 has provided Temple and Bell County and beyond with civic leadership.",
+   "markerDate": "2013",
+   "subjectCodes": [
+    "Fraternity"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\" without post"
+  },
+  {
+   "id": 15323,
+   "markerNumber": "17856",
+   "title": "George Washington Glasscock",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.276241,
+   "lng": -97.728363,
+   "markerText": "Born in Kentucky in 1810, G. W. Glasscock served in the Illinois militia in the Black Hawk War of 1832 in the same two units as Abraham Lincoln. Later he was Lincoln's business partner in flat-boating on the Sangamon River. In 1834, George came to Texas and settled in Zavala. As events unfolded in 1835, he quickly became involved in the Texas Revolution, fighting alongside Jim Bowie and Ben Milam in the Siege of Bexar. After independence, George was a surveyor and moved to the Williamson County area in 1846, where he opened the area's first gristmill and donated land for the county seat. He settled in Austin and became a state legislator and a prominent citizen. Georgetown and Glasscock County are named in his honor. (2014)",
+   "markerDate": "2014",
+   "subjectCodes": [
+    "military topics",
+    "pioneers",
+    "state official"
+   ],
+   "isRTHL": false,
+   "size": "18\" x 28\" with post"
+  },
+  {
+   "id": 15662,
+   "markerNumber": "18326",
+   "title": "Parque Zaragoza",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.261431,
+   "lng": -97.711307,
+   "markerText": "Austin’s Tejano (Mexican-American) population expanded substantially in the early 1900s, and racial segregation concentrated the growth in East Austin. Sustaining the community’s cultural identity became increasingly important. Recognizing the need for recreational space in which to celebrate their heritage, community leaders petitioned the City of Austin for a neighborhood park. In 1931, the city purchased land at this site for that purpose. The new park was named for Gen. Ignacio Seguin Zaragoza, the hero of the Battle of Puebla (Cinco de Mayo 1862), who was born in the Mexican village of Presidio de la Bahía del Espíritu Santo (present-day Goliad, Texas). The park soon emerged as a cultural hub. Local Tejano business and civic leaders established a board to organize activities and celebrations held at the park. A Comité Patriotico formed to foster goodwill locally and internationally through celebrations centered on the park, including the Fiestas Patrias of Diez y Seis de Septiembre and Cinco de Mayo, which featured music, dancing, speeches and coronations. Conjunto, a native form of Tejano music, predominated at these gatherings, often serving as the embodiment of the community’s desire for greater acceptance through recognition of its own distinct culture and legacy. Beginning in 1931, organized baseball games brought large crowds from surrounding communities. The local community treated each game as a cultural celebration, complete with food and music. Later, the community officially organized Sunday games in the park. In 1941, residents employed by the national youth administration built a recreation center. In 1996, at the Cinco de Mayo celebration, a new recreation center was dedicated. Today, Parque Zaragoza still serves as a reminder of a proud heritage. (2015)",
+   "markerDate": "2015",
+   "subjectCodes": [
+    "Mexican topics",
+    "parks",
+    "segregation, Jim Crow"
+   ],
+   "isRTHL": false,
+   "size": ""
+  },
+  {
+   "id": 15825,
+   "markerNumber": "18576",
+   "title": "Wood Street Settlement at Shoal Creek",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.27072,
+   "lng": -97.751527,
+   "markerText": "The northern half of Wood Street, near the west bank of Shoal Creek and extending to Henderson Street, was once home to a distinct enclave of African American and later Mexican American residents. As the frontier city's natural western boundary, Shoal Creek became a settling point for formerly enslaved people following the Civil War. The community along Shoal Creek was part of the African American settlements of West Austin which developed in the years after Reconstruction. As domestic servants, cooks, drivers, carpenters and laborers, residents influenced the lives and culture of Austin. Despite being surrounded by the homes of wealthier Anglos in the era of increasing racial prejudice, the African American community on Wood Street thrived into the 1920s. Two houses from the freedmen era endured several devastating floods and existed for over 100 years on the site before being demolished in 2014. As the 1928 city master plan pushed African American residents into a \"Negro district\" east of East Avenue, Hispanics (Mexican and Mexican American) began to occupy the houses along Shoal Creek, likely connected to the significant cultural enclave located just east of Shoal Creek dubbed \"Mexico\" at the time. While racial segregation concentrated most Tejanos in East Austin by the 1920s, the community at Shoal Creek persisted through the 1970s where it continued to contribute to the cultural and economic development of the downtown area. Although many of the physical reminders of this era in Austin's history have disappeared, residents of Wood Street at Shoal Creek were major contributors to the rich and diverse ethnic historical geography of Austin. (2016)",
+   "markerDate": "2016",
+   "subjectCodes": [
+    "African American topics",
+    "Mexican topics",
+    "neighborhoods",
+    "Reconstruction period",
+    "segregation, Jim Crow"
+   ],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  },
+  {
+   "id": 17126,
+   "markerNumber": "23967",
+   "title": "Richard Overton",
+   "county": "Travis",
+   "city": "Austin",
+   "lat": 30.26681,
+   "lng": -97.717881,
+   "markerText": "(1906-2018) Born in the Pleasant Valley community in Bastrop County to Gentry Overton Sr. (1877-1920) and Elizabeth \"Lizzie\" (Franklin) Overton Waters (1876-1939), Richard Arvin Overton gained notoriety as the oldest World War II veteran and living man in the United States. Richard moved to Travis County in early adulthood. He married his first wife, Novella Prince, on December 21, 1926, but soon after moved to East Austin.\r\nOn September 3, 1942, at Fort Sam Houston, Richard enlisted in the United States Army. He served in the all-Black unit of the 1887th Engineer Aviation Battalion, serving in the South Pacific, including in Pearl Harbor, Iwo Jima and Okinawa. The 1887th Battalion was notable for clearing land to build \"North Field,\" a strategic airstrip on the island of Guam, which later became Andersen Air Force Base. Overton left the Army in 1945 as a Technician Fifth Grade. Eventually, he earned the rank of Corporal and received an expert rife marksmanship badge, along with other military awards.\r\nHe later married Wilma Galloway (1910-1988). The couple had no children. In 1948, they built a home in the College Heights subdivision in East Austin. Overton worked in a warehouse, and later, for the Texas Treasury Department as a courier. He retired in the 1970s. Overton continued to be a staple in his community. In the early twenty-first century, he was honored in the White House by the President as the oldest living World War II veteran. He died at the age of 112 and is buried at the Texas State Cemetery in Austin. (2023)",
+   "markerDate": "2023",
+   "subjectCodes": [],
+   "isRTHL": false,
+   "size": "27\" x 42\""
+  }
+ ]
+}
