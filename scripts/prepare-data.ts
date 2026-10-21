@@ -1,6 +1,5 @@
 /**
- * Data pipeline: CSV + Shapefile → markers.json (served), plus legacy markers.json.gz and
- * fuse-index.json, which the app never loads and public/.assetsignore keeps out of the deploy
+ * Data pipeline: CSV + Shapefile → markers.json.gz + fuse-index.json
  *
  * Usage (as module, exported functions tested individually):
  *   csvRowToMarker(row, id) — transform one CSV row to Marker
