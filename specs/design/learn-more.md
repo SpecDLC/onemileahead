@@ -49,6 +49,8 @@ interface ResearchManifest { version, generatedAt, markers: string[] }
 ## Service Worker
 New route in `src/sw.ts`: `StaleWhileRevalidate` for `/data/research/` paths, 30-day TTL, max 500 entries.
 
-## Research Skill
+## Research Skill (out of repository)
+The files below belong to the private agent tooling and are not in this public repository. The public repo keeps only `scripts/research-markdown.ts` (`generateResearchMarkdown`), used by the round-trip test.
+
 `scripts/skills/marker-researcher.ts` — backing script with `buildSearchQueries`, `parseMarkerRange`, `generateResearchMarkdown`, `saveResearchMarkdown`, `updateManifest`.
 `.claude/commands/research-marker.md` — Claude Code command definition.

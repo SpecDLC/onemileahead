@@ -20,7 +20,7 @@ crates/oma-core   pure Rust, no I/O
   command.rs      JSON command dispatch: (state, input) -> output
 crates/oma-wasm   oma_alloc / oma_free / oma_call, panic -> JSON error
 src/engine/       TS wrapper (instantiate, call, fallback)
-prototypes/       ahead-demo.html (assembled by build.sh)
+prototypes/       ahead-demo.html (assembled by build.sh; template not in this public repo)
 ```
 
 ### Load options
@@ -76,7 +76,7 @@ calls; the core functions take and return it explicitly, which is what the Rust 
 4. **Cues.** A marker cues when it is in the corridor, moving, and along ≤ 1.0 mi, and it is not in
    the `announced` set, and the track itself shows travel: some fix 3–10 s back is at least 1.1 m/s
    away by chord. So a lone fix with a device heading and speed lists markers but doesn't announce
-   one (a cue is spoken once); at highway speed this delays a cue by about 3 s.
+   one (a cue is shown once; cues are text in an `aria-live` region, not speech — see `OMA-UX-AHEAD-3`); at highway speed this delays a cue by about 3 s.
    When the newest fix has neither a device speed nor a device heading, only the track says we are
    moving, so a cue also needs the estimated speed ≥ 4.4 m/s (`UNCONFIRMED_CUE_MPS`, 2 × the
    moving floor): a slow steady 4 m/s GPS drift of a stopped phone lists nothing it can announce. Once announced it stays silent until every kept fix over the last 20 s

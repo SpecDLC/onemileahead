@@ -5,6 +5,8 @@
 ## Description
 Initialize the One Mile Ahead PWA project with React 19, TypeScript, Vite, and all supporting tooling.
 
+*Revised 2026-10-21 to match the repository at f02f48c (spec-drift cleanup from the launch audit). Items that never existed in this public repository are marked as such rather than ticked.*
+
 ## Acceptance Criteria
 
 ### AC-PS-01: Build tooling
@@ -29,13 +31,13 @@ Initialize the One Mile Ahead PWA project with React 19, TypeScript, Vite, and a
 - [x] Playwright configured for E2E tests
 
 ### AC-PS-04: Project structure
-- [x] `src/` directory with components, pages, db, search, map, hooks, utils, types, styles
-- [x] `scripts/skills/` for skill backing scripts
+- [x] `src/` with components, pages, db, search, hooks, utils, types, styles, engine (WASM wrapper) and projectors. The map is `src/pages/MapPage.tsx`; there is no `src/map/`
+- [x] `crates/` for the Rust engine (`oma-core`, `oma-wasm`)
 - [x] `specs/` for SpecDLC artifacts
-- [x] `.claude/commands/` for skill definitions
-- [x] `public/data/` for built marker data
-- [x] `data/` for raw source data (gitignored)
+- [x] `public/data/` for built marker data (`markers.json` is committed)
+- [x] `fixtures/` for test inputs
 - [x] `e2e/` for Playwright tests
+- Not in this repository: `scripts/skills/` and `.claude/commands/` (the agent tooling is kept private), and `data/` (raw THC sources). `.gitignore` no longer lists `data/`, so raw sources must be kept out by hand
 
 ### AC-PS-05: NPM scripts
 - [x] `dev` — start dev server
@@ -46,10 +48,12 @@ Initialize the One Mile Ahead PWA project with React 19, TypeScript, Vite, and a
 - [x] `test:e2e` — run Playwright E2E tests
 - [x] `typecheck` — TypeScript check only
 - [x] `preview` — preview production build
+- [x] `lint` — ESLint over `src/`
+- [x] `deploy` — build, then `wrangler deploy`
 
 ### AC-PS-06: Data acquisition
-- [x] THC shapefile downloaded (16,123 features, 8 fields, lat/lng coordinates)
-- [x] THC CSV downloaded via API (17,368 records, 23 fields, inscription text)
-- [x] API endpoint documented for future data refreshes
+- [x] THC shapefile downloaded (NAD83 / Texas State Mapping System points; see `requirements/data-pipeline.md`)
+- [x] THC CSV downloaded via the Atlas data download (17,371 records in the 2026-10 export, 23 fields, inscription text)
+- [x] API endpoint documented for future data refreshes (`design/project-setup.md`)
 
 ## Status: COMPLETE

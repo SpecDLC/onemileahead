@@ -3,6 +3,8 @@
 ## Overview
 The Learn More feature adds a section to the Marker Detail page that displays curated external links related to each historical marker. Links come from Grokipedia (primary), Wikipedia (fallback), and curated sources. Research data is authored as Markdown files and parsed at runtime by TypeScript projectors.
 
+**Status 2026-10-21:** no research files ship yet (`public/data/research/` is not in the repository). By owner decision (Q4 in `acceptance/one-mile-ahead-launch-audit.md`), Learn More and featured markers are hidden until they do, and `OMA-FUNC-LEARN-1`–`4`, `OMA-FUNC-FEAT-1` and `OMA-TECH-EDGE-5` are retired until then. The requirements below describe the feature for when research ships.
+
 ## User Stories
 
 - **US-LM-01**: As a passenger, I want to see related articles about a historical marker so I can learn more about the topic beyond the inscription.
@@ -29,7 +31,8 @@ The Learn More feature adds a section to the Marker Detail page that displays cu
 - **AC-LM-11**: Service worker caches fetched research Markdown files for offline access.
 - **AC-LM-12**: Cache expires after 30 days with max 500 entries.
 
-### Research Skill (AC-LM-13 through AC-LM-15)
+### Research Skill (AC-LM-13 through AC-LM-15) — out of repository
+The command and its backing script are part of the private agent tooling and are not in this public repository. These ACs cannot be checked from here.
 - **AC-LM-13**: `/research-marker` Claude Code command accepts marker number(s) as argument.
 - **AC-LM-14**: Command generates research Markdown with Grokipedia, Wikipedia, and curated links.
 - **AC-LM-15**: Command updates manifest.json after generating research files.
