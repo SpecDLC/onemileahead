@@ -4,15 +4,15 @@
 
 **Live:** https://onemileahead.specdlc.com · **Part of:** [SpecDLC](https://specdlc.com), spec-driven delivery with acceptance criteria as the contract.
 
-One Mile Ahead is an offline-first app for Texas Historical Commission markers. Look up a marker by number, search the inscription, or see which markers are nearby. The marker list lives in the browser after the first load, so the lookup still works with the network off.
+One Mile Ahead is an offline-first app for Texas Historical Commission markers. Look up a marker by number, search the inscription, or see which markers are nearby and which one is coming up on the road. The marker list lives in the browser after the first load, so the lookup still works with the network off.
 
-The page is a React app. An engine in Rust, compiled to WebAssembly, implements the same lookup, nearby and research logic plus an "ahead" command; for now the app uses it only behind the `?engine=wasm` flag.
+The engine is Rust, compiled to WebAssembly. The page is a React app. Both paths answer the same commands: load, lookup, search, nearby, ahead, and research.
 
 ## What it does
 
 - **Lookup by number.** A full marker number shows that marker first. A digit prefix shows the exact match, then the lowest numbers that start with those digits.
 - **Search.** A word search checks the title, county, city, and inscription.
-- **Nearby.** Ranks markers by distance from you.
+- **Nearby and ahead.** Nearby ranks markers by distance. Ahead follows the road and names the next marker in the direction of travel.
 - **Offline.** The first visit stores the marker list. Later visits open from that copy.
 
 ## The contract: acceptance criteria
