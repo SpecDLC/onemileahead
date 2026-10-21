@@ -1,0 +1,4 @@
+# Built by scripts/prepare-data.ts but never fetched by the app.
+data/fuse-index.json
+# Only fetched if data/markers.json fails, which then fails too; Cloudflare compresses markers.json.
+data/markers.json.gz

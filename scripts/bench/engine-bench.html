@@ -1,0 +1,72 @@
+<!doctype html><meta charset="utf-8"><title>Engine bench</title><!-- Served by scripts/bench-engine.mjs. Load timings include JSON.stringify of the marker array. --><script>
+// TS path, verbatim logic of src/utils/distance.ts + computeNearby (useNearbyMarkers.ts)
+const EARTH_RADIUS_MILES = 3958.8, DEG_TO_RAD = Math.PI / 180;
+function haversineDistance(lat1, lng1, lat2, lng2) { const dLat = (lat2 - lat1) * DEG_TO_RAD; const dLng = (lng2 - lng1) * DEG_TO_RAD; const a = Math.sin(dLat / 2) ** 2 + Math.cos(lat1 * DEG_TO_RAD) * Math.cos(lat2 * DEG_TO_RAD) * Math.sin(dLng / 2) ** 2; const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); return EARTH_RADIUS_MILES * c; }
+function bearing(lat1, lng1, lat2, lng2) { const dLng = (lng2 - lng1) * DEG_TO_RAD; const lat1Rad = lat1 * DEG_TO_RAD; const lat2Rad = lat2 * DEG_TO_RAD; const y = Math.sin(dLng) * Math.cos(lat2Rad); const x = Math.cos(lat1Rad) * Math.sin(lat2Rad) - Math.sin(lat1Rad) * Math.cos(lat2Rad) * Math.cos(dLng); const deg = (Math.atan2(y, x) * 180) / Math.PI; return (deg + 360) % 360; }
+function computeNearby(all, p, limit) { return all.filter((m) => m.lat !== 0 || m.lng !== 0).map((m) => ({ marker: m, distance: haversineDistance(p.lat, p.lng, m.lat, m.lng), bearing: bearing(p.lat, p.lng, m.lat, m.lng) })).sort((a, b) => a.distance - b.distance).slice(0, limit); }
+
+function idb(markers) { return new Promise((res, rej) => { indexedDB.deleteDatabase('bench'); const r = indexedDB.open('bench', 1); r.onupgradeneeded = () => r.result.createObjectStore('markers', { keyPath: 'id' }); r.onsuccess = () => { const db = r.result; const tx = db.transaction('markers', 'readwrite'); const s = tx.objectStore('markers'); for (const m of markers) s.put(m); tx.oncomplete = () => res(db); tx.onerror = rej; }; r.onerror = rej; }); }
+function getAll(db) { return new Promise((res) => { const q = db.transaction('markers').objectStore('markers').getAll(); q.onsuccess = () => res(q.result); }); }
+const stats = (xs) => { const s = [...xs].sort((a, b) => a - b); return { median: +s[Math.floor(s.length / 2)].toFixed(3), p95: +s[Math.floor(s.length * 0.95)].toFixed(3), n: s.length }; };
+
+window.run = async () => {
+  const out = {};
+  const bytes = new Uint8Array(await (await fetch('oma_engine.wasm')).arrayBuffer());
+  // Instantiate: median of 5 (compile + instantiate from bytes).
+  const inst = [];
+  let instance, t;
+  for (let i = 0; i < 5; i++) { t = performance.now(); ({ instance } = await WebAssembly.instantiate(bytes, {})); inst.push(performance.now() - t); }
+  out.instantiate_ms = +inst.sort((a, b) => a - b)[2].toFixed(1);
+  const x = instance.exports, enc = new TextEncoder(), dec = new TextDecoder();
+  const call = (cmd) => { const b = enc.encode(JSON.stringify(cmd)); const p = x.oma_alloc(b.length); new Uint8Array(x.memory.buffer, p, b.length).set(b); const r = x.oma_call(p, b.length); x.oma_free(p, b.length); const n = new DataView(x.memory.buffer).getUint32(r, true); const o = JSON.parse(dec.decode(new Uint8Array(x.memory.buffer, r + 4, n))); x.oma_free(r, 4 + n); if (!o.ok) throw new Error(o.error); return o; };
+  const markers = await (await fetch('markers.json')).json();
+  { // lazy-text load on a separate instance (what the flagged app does)
+    const { instance: i2 } = await WebAssembly.instantiate(bytes, {});
+    const y = i2.exports;
+    const t1 = performance.now();
+    const b2 = enc.encode(JSON.stringify({ cmd: 'load', markers, lazy_text: true }));
+    const t2 = performance.now();
+    const p = y.oma_alloc(b2.length); new Uint8Array(y.memory.buffer, p, b2.length).set(b2); y.oma_call(p, b2.length);
+    out.load_lazy_text_ms = +(performance.now() - t1).toFixed(1);
+    out.wasm_memory_lazy_mb = +(y.memory.buffer.byteLength / 1048576).toFixed(1);
+    out.json_stringify_17mb_ms = +(t2 - t1).toFixed(1);
+  }
+  t = performance.now();
+  const st = call({ cmd: 'load', markers });
+  out.load_eager_all_indexes_ms = +(performance.now() - t).toFixed(1);
+  out.load_stats = st;
+  out.wasm_memory_eager_mb = +(x.memory.buffer.byteLength / 1048576).toFixed(1);
+
+  const db = await idb(markers);
+  const withC = markers.filter((m) => m.lat !== 0 || m.lng !== 0);
+  let seed = 9; const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 2 ** 32);
+  const pts = Array.from({ length: 60 }, () => { const m = withC[Math.floor(rnd() * withC.length)]; return { lat: m.lat + (rnd() - .5) * .05, lng: m.lng + (rnd() - .5) * .05 }; });
+  // warm up
+  for (const p of pts.slice(0, 5)) { computeNearby(markers, p, 50); call({ cmd: 'nearby', lat: p.lat, lng: p.lng, limit: 50 }); }
+  const tsScan = [], tsFull = [], wasmNear = [], idbRead = [];
+  for (const p of pts) {
+    t = performance.now(); computeNearby(markers, p, 50); tsScan.push(performance.now() - t);
+    t = performance.now(); const all = await getAll(db); const mid = performance.now(); computeNearby(all, p, 50); tsFull.push(performance.now() - t); idbRead.push(mid - t);
+    t = performance.now(); call({ cmd: 'nearby', lat: p.lat, lng: p.lng, limit: 50 }); wasmNear.push(performance.now() - t);
+  }
+  out.nearby = { ts_scan_in_memory: stats(tsScan), ts_hook_path_with_indexeddb_read: stats(tsFull), indexeddb_getAll_only: stats(idbRead), wasm_engine: stats(wasmNear) };
+
+  // ahead: 30-fix window along I-35 at 70 mph
+  const route = (await (await fetch('i35-route.json')).json()).points;
+  // 1 Hz fixes at 31 m/s (~70 mph) along the route.
+  const fixes = []; let tt = 0; const stepMi = 31 / 1609.344;
+  for (let i = 0; i < route.length - 1; i++) { const [a, b] = [route[i], route[i + 1]]; const len = haversineDistance(a[0], a[1], b[0], b[1]); const steps = Math.max(1, Math.round(len / stepMi)); for (let k = 0; k < steps; k++) { fixes.push({ lat: a[0] + (b[0] - a[0]) * k / steps, lng: a[1] + (b[1] - a[1]) * k / steps, t: tt, heading: bearing(a[0], a[1], b[0], b[1]), speed: 31 }); tt += 1000; } }
+  const aheadT = [], aheadEst = [];
+  call({ cmd: 'reset_cues' });
+  const statusOk = [];
+  for (let i = 30; i < fixes.length; i += 10) {
+    const w = fixes.slice(i - 30, i);
+    t = performance.now(); const ra = call({ cmd: 'ahead', fixes: w, horizon_mi: 10, corridor_ft: 1500 }); aheadT.push(performance.now() - t);
+    const w2 = w.map(({ heading, speed, ...f }) => f);
+    t = performance.now(); const rb = call({ cmd: 'ahead', fixes: w2, horizon_mi: 10, corridor_ft: 1500 }); aheadEst.push(performance.now() - t);
+    statusOk.push((ra.status === 'ok') + (rb.status === 'ok'));
+  }
+  out.ahead = { device_heading: stats(aheadT), estimated_heading: stats(aheadEst), share_status_ok: statusOk.reduce((a, b) => a + b, 0) / (2 * statusOk.length) };
+  return out;
+};
+</script>
