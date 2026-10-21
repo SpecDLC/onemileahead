@@ -6,7 +6,7 @@
 
 One Mile Ahead is an offline-first app for Texas Historical Commission markers. Look up a marker by number, search the inscription, or see which markers are nearby. The marker list lives in the browser after the first load, so the lookup still works with the network off.
 
-The page is a React app. An engine in Rust, compiled to WebAssembly, implements the same lookup, nearby and research logic plus an "ahead" command; for now the app uses it only behind the `?engine=wasm` flag.
+The page is a React app. An engine in Rust, compiled to WebAssembly, implements the same lookup, nearby and research logic plus an "ahead" command. The Ahead tab uses that command. Nearby still uses the TypeScript scan unless `?engine=wasm` is present.
 
 ## What it does
 

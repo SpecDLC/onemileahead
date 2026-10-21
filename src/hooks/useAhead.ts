@@ -33,7 +33,7 @@ export function nextCues(held: AheadItem[], result: AheadResult): AheadItem[] {
   return [...kept, ...result.cues];
 }
 
-/** Feeds each GPS fix to the engine's `ahead` command (flagged prototype). */
+/** Feeds each GPS fix to the engine's `ahead` command. */
 export function useAhead(position: GeoPosition | null): AheadState {
   const fixes = useRef<Fix[]>([]);
   const [state, setState] = useState<AheadState>({ available: null, result: null, cues: [] });

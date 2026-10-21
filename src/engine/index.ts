@@ -1,18 +1,20 @@
 /**
- * App entry to the WASM engine — only used behind `?engine=wasm`.
+ * App entry to the WASM engine.
  *
- * `getEngine()` resolves to a loaded engine, or `null` if the flag is off or anything fails
- * (fetch, instantiate, load). Callers fall back to the TypeScript path on `null`.
+ * Ahead loads it on the plain URL. Nearby calls `getEngine()` only when `?engine=wasm` is set,
+ * and otherwise keeps the TypeScript scan.
+ *
+ * `getEngine()` resolves to a loaded engine, or `null` if anything fails (fetch, instantiate,
+ * load). Callers fall back to the TypeScript path on `null`.
  */
 import wasmUrl from './oma_engine.wasm?url';
 import { db } from '../db/database';
 import { OmaEngine } from './omaEngine';
-import { isWasmEngineEnabled } from './flag';
 
 export { OmaEngine } from './omaEngine';
 export type { AheadItem, AheadResult, AheadOptions, EngineNearby, Fix } from './omaEngine';
 
-export { isWasmEngineEnabled };
+export { isWasmEngineEnabled } from './flag';
 
 let enginePromise: Promise<OmaEngine | null> | null = null;
 
@@ -20,13 +22,13 @@ let enginePromise: Promise<OmaEngine | null> | null = null;
 export const ENGINE_CACHE = 'engine-wasm';
 
 /**
- * With ?engine=wasm, store the engine module in the service worker's cache as soon as the page
- * loads, so the Ahead and Nearby tabs work offline even if they were never opened while online.
+ * Store the engine module in the service worker's cache as soon as the page loads, so Ahead can
+ * load it on the plain URL, including offline, even if that tab was never opened while online.
  * Writes the cache directly rather than fetching through the service worker, because on the first
- * visit the page isn't controlled yet. Never rejects; a no-op without the flag or Cache Storage.
+ * visit the page isn't controlled yet. Never rejects; a no-op without Cache Storage.
  */
 export async function warmEngineCache(): Promise<void> {
-  if (!isWasmEngineEnabled() || typeof caches === 'undefined') return;
+  if (typeof caches === 'undefined') return;
   try {
     const cache = await caches.open(ENGINE_CACHE);
     if (!(await cache.match(wasmUrl))) await cache.add(wasmUrl);
@@ -41,16 +43,15 @@ async function fetchBytes(): Promise<ArrayBuffer> {
   return res.arrayBuffer();
 }
 
-/** Load once per page. Never rejects. */
+/** Load once per page. Never rejects. Ahead calls this on the plain URL. */
 export function getEngine(
   loadBytes: () => Promise<BufferSource> = fetchBytes,
 ): Promise<OmaEngine | null> {
-  if (!isWasmEngineEnabled()) return Promise.resolve(null);
   if (!enginePromise) {
     enginePromise = (async () => {
       try {
         const engine = await OmaEngine.fromBytes(await loadBytes());
-        // The flagged app only uses nearby/ahead from the engine (search stays on Fuse).
+        // Search stays on Fuse. Nearby uses this engine only behind ?engine=wasm.
         engine.load(await db.markers.toArray(), { lazyText: true });
         return engine;
       } catch (err) {

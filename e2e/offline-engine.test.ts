@@ -2,10 +2,11 @@
  * `/?engine=wasm` works offline after one online visit (handoff §4.3). Needs `npm run build`;
  * needs no marker data, because it checks the shell and the engine module, not the marker list.
  *
- * Two things used to break it:
+ * Two things used to break the flagged URL:
  * - Workbox's precache ignores only utm_* and fbclid by default, so `/?engine=wasm` never matched
  *   the precached index.html;
  * - the engine module (*.wasm) isn't in the precache manifest, so it was never stored.
+ * The plain URL stores the same module on load, because Ahead no longer needs the flag.
  */
 import { test, expect } from '@playwright/test';
 import { serveDist, wasmAsset } from './helpers/serveDist';
@@ -60,14 +61,17 @@ test('the flagged URL and the engine load offline after one online visit', async
   await context.setOffline(false);
 });
 
-test('without the flag, the engine is not downloaded', async ({ page }) => {
+test('the plain URL caches the engine module on load', async ({ page }) => {
+  const wasm = wasmAsset();
   const engineRequests: string[] = [];
   page.on('request', (r) => {
     if (r.url().endsWith('.wasm')) engineRequests.push(r.url());
   });
   await page.goto(`${base}/`);
   await page.evaluate(() => navigator.serviceWorker.ready);
-  await page.waitForTimeout(1000);
-  expect(engineRequests).toEqual([]);
-  expect(await page.evaluate(() => caches.has('engine-wasm'))).toBe(false);
+  await expect
+    .poll(() => page.evaluate(async (u) => !!(await caches.match(u)), wasm), { timeout: 10_000 })
+    .toBe(true);
+  expect(engineRequests.length).toBeGreaterThan(0);
+  expect(page.url()).not.toContain('engine=wasm');
 });

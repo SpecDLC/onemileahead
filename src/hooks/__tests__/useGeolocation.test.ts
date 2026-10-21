@@ -58,6 +58,30 @@ describe('useGeolocation [REQ:nearby]', () => {
     expect(result.current.position).toEqual({
       lat: 30.2672,
       lng: -97.7431,
+      heading: null,
+      speed: null,
+      timestamp: mockPosition.timestamp,
+    });
+  });
+
+  it('records heading and speed for Ahead [AC:GEO-02]', () => {
+    const { result } = renderHook(() => useGeolocation());
+    const moving = {
+      ...mockPosition,
+      coords: { ...mockPosition.coords, heading: 12, speed: 29 },
+      timestamp: 1_700_000_000_000,
+    };
+
+    act(() => {
+      watchCallbacks[0]?.success(moving);
+    });
+
+    expect(result.current.position).toEqual({
+      lat: 30.2672,
+      lng: -97.7431,
+      heading: 12,
+      speed: 29,
+      timestamp: 1_700_000_000_000,
     });
   });
 

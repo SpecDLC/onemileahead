@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { isWasmEngineEnabled } from '../engine/flag';
 
 export interface GeoPosition {
   lat: number;
@@ -27,8 +26,6 @@ export function useGeolocation(): GeolocationState {
 
   useEffect(() => {
     if (!navigator.geolocation) return;
-    // Read once per mount: the flag comes from the page URL.
-    const withMotion = isWasmEngineEnabled();
 
     watchId.current = navigator.geolocation.watchPosition(
       (pos) => {
@@ -36,12 +33,10 @@ export function useGeolocation(): GeolocationState {
           position: {
             lat: pos.coords.latitude,
             lng: pos.coords.longitude,
-            // Only the ?engine=wasm Ahead tab uses these; the default shape stays unchanged.
-            ...(withMotion && {
-              heading: pos.coords.heading,
-              speed: pos.coords.speed,
-              timestamp: pos.timestamp,
-            }),
+            // Ahead estimates the road from these. Nearby reads only lat and lng.
+            heading: pos.coords.heading,
+            speed: pos.coords.speed,
+            timestamp: pos.timestamp,
           },
           error: null,
         });

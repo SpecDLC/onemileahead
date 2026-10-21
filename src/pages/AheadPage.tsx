@@ -21,7 +21,7 @@ function eta(seconds: number | null): string {
   return seconds < 60 ? 'under a minute' : `about ${Math.round(seconds / 60)} min`;
 }
 
-/** Prototype tab behind ?engine=wasm: markers coming up on the road ahead. */
+/** Markers coming up on the road ahead. */
 export default function AheadPage({ onSelectMarker }: AheadPageProps) {
   const { position, error } = useGeolocation();
   const { available, result, cues } = useAhead(position);

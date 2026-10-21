@@ -3,7 +3,6 @@ import SearchPage from './pages/SearchPage';
 import MarkerDetail from './pages/MarkerDetail';
 import NearbyPage from './pages/NearbyPage';
 import AheadPage from './pages/AheadPage';
-import { isWasmEngineEnabled } from './engine/flag';
 import LoadingScreen from './components/LoadingScreen';
 import InstallBanner from './components/InstallBanner';
 import SettingsDrawer from './components/SettingsDrawer';
@@ -14,9 +13,6 @@ import type { Marker } from './types/marker';
 const MapPage = lazy(() => import('./pages/MapPage'));
 
 type Tab = 'search' | 'map' | 'nearby' | 'ahead';
-
-// ?engine=wasm: prototype Rust/WASM engine, which adds the Ahead tab.
-const SHOW_AHEAD = isWasmEngineEnabled();
 
 export default function App() {
   const { state: loadState, progress, error } = useDataLoader();
@@ -71,7 +67,7 @@ export default function App() {
           </Suspense>
         )}
         {activeTab === 'nearby' && <NearbyPage onSelectMarker={setSelectedMarker} />}
-        {activeTab === 'ahead' && SHOW_AHEAD && <AheadPage onSelectMarker={setSelectedMarker} />}
+        {activeTab === 'ahead' && <AheadPage onSelectMarker={setSelectedMarker} />}
       </main>
       <nav className="tab-bar">
         <button
@@ -92,14 +88,12 @@ export default function App() {
         >
           Nearby
         </button>
-        {SHOW_AHEAD && (
-          <button
-            className={`tab-button ${activeTab === 'ahead' ? 'active' : ''}`}
-            onClick={() => setActiveTab('ahead')}
-          >
-            Ahead
-          </button>
-        )}
+        <button
+          className={`tab-button ${activeTab === 'ahead' ? 'active' : ''}`}
+          onClick={() => setActiveTab('ahead')}
+        >
+          Ahead
+        </button>
       </nav>
       <SettingsDrawer isOpen={settingsOpen} onClose={() => setSettingsOpen(false)} />
     </div>

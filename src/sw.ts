@@ -15,9 +15,9 @@ precacheAndRoute(self.__WB_MANIFEST, {
   ignoreURLParametersMatching: [/^utm_/, /^fbclid$/, /^engine$/],
 });
 
-// The engine module (~370 KB) isn't precached, so only ?engine=wasm users download it. Its name is
-// content-hashed, so a cached copy never goes stale; keep the last two builds. Flagged pages fill
-// this cache on load (warmEngineCache in src/engine/index.ts); keep the names in sync.
+// The engine module (~370 KB) isn't precached. Every visit stores it on load (warmEngineCache in
+// src/engine/index.ts) so the plain URL can load it, including offline. Its name is
+// content-hashed, so a cached copy never goes stale; keep the last two builds. Keep the names in sync.
 registerRoute(
   ({ url }) => url.origin === self.location.origin && /^\/assets\/.+\.wasm$/.test(url.pathname),
   new CacheFirst({

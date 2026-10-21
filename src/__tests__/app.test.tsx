@@ -45,10 +45,13 @@ describe('App', () => {
     expect(searchButton).not.toHaveClass('active');
   });
 
-  it('renders all three tab buttons', () => {
+  it('shows the Ahead tab when the query string is empty', () => {
+    window.history.replaceState({}, '', '/');
     render(<App />);
-    expect(screen.getByRole('button', { name: /search/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /map/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /nearby/i })).toBeInTheDocument();
+    expect(window.location.search).toBe('');
+    expect(screen.getByRole('button', { name: /^search$/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^map$/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^nearby$/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^ahead$/i })).toBeInTheDocument();
   });
 });
