@@ -42,7 +42,7 @@ Each item is done when its AC has a `passed` reading against the deployed hostna
 3. `OMA-FUNC-LOOKUP-5`: "#95" and "marker 95" find #95.
 4. `OMA-FUNC-SEARCH-3`: title matches rank above city- and county-only matches.
 5. `OMA-TECH-CI-1`: deploy waits for Verify.
-6. `OMA-TECH-BUILD-1`: `npm test` passes on a clean checkout. It is refuted at HEAD by the differential timeout.
+6. `OMA-TECH-BUILD-1`: `npm test` passes on a clean checkout in every environment we use. It passes in CI, but the differential test timed out in a slower sandbox (section 2). The owner listed it as a blocker on the earlier `refuted` reading; it may come off this list once the test has margin.
 7. `OMA-TECH-EDGE-7` and `OMA-UX-PRIV-1`: the Web Analytics beacon loads with no CSP violation, and a disclosure line says so (Q6). `PRIV-1` was not in the owner's blocker list; it is placed here because Q6 ties the disclosure to allowing the beacon. Move it to post-launch if the owner prefers.
 8. `OMA-UX-A11Y-1`: every control that opens a marker works from the keyboard.
 9. `OMA-SEC-EDGE-8`: HSTS, Referrer-Policy and Permissions-Policy.
@@ -79,7 +79,7 @@ Ahead becomes a default tab once `AHEAD-2` passes (Q1). Until then, the README d
 
 | Alias | New reading | Note |
 |---|---|---|
-| `OMA-TECH-BUILD-1` | **`refuted`** | `src/engine/__tests__/differential.test.ts:176` ("lookup: identical to searchByMarkerNumber") times out at 120 s. This happens because the full 17,371-record `markers.json` is now committed, so `skipIf(!available)` no longer skips it. It runs under fake-indexeddb on 2 vCPUs. Fix: sample the dataset, or give the test a separate, longer-running job. |
+| `OMA-TECH-BUILD-1` | `passed` in CI; **`refuted`** in a slower environment | *Corrected 2026-10-21 after the first CI runs on #6 and #7.* On GitHub's `ubuntu-latest`, Verify's `npm ci && npm test && npm run build` passed in about 2 min 20 s. In the audit sandbox (2 vCPUs), `src/engine/__tests__/differential.test.ts:176` ("lookup: identical to searchByMarkerNumber") hit its 120 s limit twice. It now runs because the full 17,371-record `markers.json` is committed, so `skipIf(!available)` no longer skips it, and it uses fake-indexeddb. The margin depends on the machine. Fix: sample the dataset, or move the full-dataset run to its own job with a longer limit. |
 | `OMA-UX-A11Y-1` | **`refuted`** (live) | Result cards are `<article>` with `tabIndex = -1` and no role. The map popup body is a click-only `div`. |
 | `OMA-FUNC-LOOKUP-1` | `passed` (live) | "95" → #95 first. |
 | `OMA-FUNC-LOOKUP-3` | `passed` (live) | "99999" → "No markers found". |
