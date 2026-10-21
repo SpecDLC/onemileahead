@@ -75,6 +75,7 @@ Leaflet, and it ships only behind the `?engine=wasm` URL flag.
 
 ### AC-WE-09: Demo
 - [x] `prototypes/ahead-demo.html` is one self-contained file (WASM inlined as base64, < 16 MB).
+      *2026-10-21:* the demo's template and fonts are not in this public repository, so `./build.sh`'s last step (`scripts/assemble-demo.mjs`) cannot run from a clean clone. The README says so.
 - [x] Simulated drive along a real Texas highway at adjustable speed, a live "Up ahead" list, a cue
       banner at ~1 mi, and a toggle to compare with the old nearest-first list.
 - [x] States which marker subset is embedded.
@@ -93,7 +94,7 @@ Leaflet, and it ships only behind the `?engine=wasm` URL flag.
 - learn-more (research projector being ported)
 
 ## Notes
-- `specs/requirements/data-pipeline.md` says `Status: DRAFT` while `INDEX.md` lists it as COMPLETE.
-  Flagged in the PR, deliberately not changed here.
+- *2026-10-21:* an earlier note here referred to an `INDEX.md` that is not in the repository; removed. `requirements/data-pipeline.md` is now `Status: ACTIVE` and matches the code.
+- Ahead ships only behind `?engine=wasm`. It becomes a default tab once `OMA-UX-AHEAD-2` passes (owner, Q1 in `acceptance/one-mile-ahead-launch-audit.md`).
 
 ## Status: ACTIVE
